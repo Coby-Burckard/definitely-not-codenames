@@ -1,12 +1,12 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 const intialState = {
-  message: [],
+  messages: [],
 };
 
 const chatReducer = createReducer(intialState, {
-  SET_MESSAGE: (state, action) => {
-    state.message.push(action.payload);
+  ADD_MESSAGE: (state, action) => {
+    state.messages.push(action.message);
   },
 });
 

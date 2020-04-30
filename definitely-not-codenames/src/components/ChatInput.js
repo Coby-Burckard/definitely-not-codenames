@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { startAddMessage } from "../actions/chatActions";
 
 const ChatInput = () => {
   const dispatch = useDispatch();
@@ -8,8 +9,8 @@ const ChatInput = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    dispatch({type: 'WS_CONNECT', host: "ws://localhost:8080"})
-  }, []);
+    dispatch({ type: "WS_CONNECT", host: "ws://localhost:8080" });
+  }, [dispatch]);
 
   // event handling
   const handleMessageChange = (e) => {
@@ -19,9 +20,9 @@ const ChatInput = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch({type: 'WS_SEND', message})
+    dispatch(startAddMessage(message));
 
-    setMessage("")
+    setMessage("");
   };
 
   return (
@@ -32,4 +33,4 @@ const ChatInput = () => {
   );
 };
 
-export default ChatInput
+export default ChatInput;
