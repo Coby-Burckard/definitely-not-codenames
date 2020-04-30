@@ -6,17 +6,9 @@ const ChatInput = () => {
 
   // hooks
   const [message, setMessage] = useState("");
+
   useEffect(() => {
-    const URL = "ws://localhost:8080";
-    const ws = new WebSocket(URL);
-
-    ws.onopen = (e) => {
-      console.log("open");
-    };
-
-    ws.onmessage = (e) => {
-      console.log(e.data);
-    };
+    dispatch({type: 'WS_CONNECT', host: "ws://localhost:8080"})
   }, []);
 
   // event handling
@@ -26,6 +18,10 @@ const ChatInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    dispatch({type: 'WS_SEND', message})
+
+    setMessage("")
   };
 
   return (
@@ -35,3 +31,5 @@ const ChatInput = () => {
     </form>
   );
 };
+
+export default ChatInput
