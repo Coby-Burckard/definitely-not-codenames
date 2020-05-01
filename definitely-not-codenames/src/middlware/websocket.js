@@ -1,4 +1,4 @@
-import { addMessage } from "../actions/chatActions";
+import receiver from "./receiver";
 
 const socketMiddleware = () => {
   let socket = null;
@@ -12,9 +12,8 @@ const socketMiddleware = () => {
     // store.dispatch(actions.wsDisconnected());
   };
 
-  const onMessage = (store) => (event) => {
-    const payload = event.data;
-    store.dispatch(addMessage(event.data));
+  const onMessage = ({dispatch}) => (event) => {
+    receiver(dispatch, event.data);
   };
 
   return (store) => (next) => (action) => {
@@ -42,11 +41,10 @@ const socketMiddleware = () => {
         console.log("websocket closed");
         break;
       case "WS_SEND":
-        console.log("sending a message", action.message);
-        socket.send(action.message);
+        console.log("sending a message", action.payload);
+        socket.send(JSON.stringify(action.payload));
         break;
       default:
-        console.log("the next action:", action);
         return next(action);
     }
   };

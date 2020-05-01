@@ -1,6 +1,10 @@
-const wsSend = (message) => ({
+const wsSend = (payload) => ({
   type: "WS_SEND",
-  message,
+  payload,
 });
 
-export { wsSend };
+const wsGetRoom = () => ({
+  type: "WS_GET_ROOM",
+});
+
+export { wsSend, wsGetRoom };
