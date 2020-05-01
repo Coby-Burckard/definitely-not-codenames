@@ -41,8 +41,8 @@ const socketMiddleware = () => {
         console.log("websocket closed");
         break;
       case "WS_SEND":
-        console.log("sending a message", action.message);
-        socket.send(action.message);
+        console.log("sending a message", action.payload);
+        socket.send(JSON.stringify(action.payload));
         break;
       default:
         console.log("the next action:", action);

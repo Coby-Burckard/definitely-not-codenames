@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import wsGetRoom from "../actions/webSocketActions";
+import {startGetRoom} from "../actions/roomActions";
 
 const RequestRoom = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(wsGetRoom());
+    dispatch(startGetRoom());
   };
 
   return (
@@ -15,3 +15,5 @@ const RequestRoom = () => {
     </div>
   );
 };
+
+export default RequestRoom

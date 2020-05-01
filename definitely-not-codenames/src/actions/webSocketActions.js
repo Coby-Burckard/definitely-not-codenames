@@ -1,6 +1,6 @@
-const wsSend = (message) => ({
+const wsSend = (payload) => ({
   type: "WS_SEND",
-  message,
+  payload,
 });
 
 const wsGetRoom = () => ({
