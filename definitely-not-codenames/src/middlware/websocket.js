@@ -1,26 +1,24 @@
-import receiver from "./receiver";
+import receiver from './receiver';
 
 const socketMiddleware = () => {
   let socket = null;
 
-  const onOpen = (store) => (event) => {
-    console.log("websocket connected", event.target.url);
+  const onOpen = store => event => {
     // store.dispatch(actions.wsConnected(event.target.url));
   };
 
-  const onClose = (store) => () => {
+  const onClose = store => () => {
     // store.dispatch(actions.wsDisconnected());
   };
 
-  const onMessage = ({dispatch}) => (event) => {
+  const onMessage = ({dispatch}) => event => {
     receiver(dispatch, event.data);
   };
 
-  return (store) => (next) => (action) => {
+  return store => next => action => {
     switch (action.type) {
-      case "WS_CONNECT":
+      case 'WS_CONNECT':
         if (socket !== null) {
-          console.log("closing socket");
           socket.close();
         }
 
@@ -33,15 +31,13 @@ const socketMiddleware = () => {
         socket.onopen = onOpen(store);
 
         break;
-      case "WS_DISCONNECT":
+      case 'WS_DISCONNECT':
         if (socket !== null) {
           socket.close();
         }
         socket = null;
-        console.log("websocket closed");
         break;
-      case "WS_SEND":
-        console.log("sending a message", action.payload);
+      case 'WS_SEND':
         socket.send(JSON.stringify(action.payload));
         break;
       default:

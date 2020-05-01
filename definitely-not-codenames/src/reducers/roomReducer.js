@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+import {createReducer} from '@reduxjs/toolkit';
 
 const initialState = {
   room: false,

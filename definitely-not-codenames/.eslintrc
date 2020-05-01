@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "@abhijithvijayan/eslint-config"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": 0
+  },
+  "env": {
+    "browser": true
+}
+}

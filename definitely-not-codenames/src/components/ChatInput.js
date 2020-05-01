@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { startAddMessage } from "../actions/chatActions";
+import React, {useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import {startAddMessage} from '../actions/chatActions';
 
 const ChatInput = () => {
   const dispatch = useDispatch();
 
   // hooks
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
-    dispatch({ type: "WS_CONNECT", host: "ws://localhost:8080" });
+    dispatch({type: 'WS_CONNECT', host: 'ws://localhost:8080'});
   }, [dispatch]);
 
   // event handling
-  const handleMessageChange = (e) => {
+  const handleMessageChange = e => {
     setMessage(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     dispatch(startAddMessage(message));
 
-    setMessage("");
+    setMessage('');
   };
 
   return (

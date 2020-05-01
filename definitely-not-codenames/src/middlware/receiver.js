@@ -1,24 +1,22 @@
-import { addMessage } from "../actions/chatActions";
-import { setRoom } from "../actions/roomActions";
+import {addMessage} from '../actions/chatActions';
+import {setRoom} from '../actions/roomActions';
 
 const receiver = (dispatch, rawJSON) => {
-  let data
+  let data;
 
   try {
-    data = JSON.parse(rawJSON)
-  } catch (e) {
-    console.error("Malformed data", rawJSON)
-    return
+    data = JSON.parse(rawJSON);
+  } catch {
+    return;
   }
 
   switch (data.type) {
-    case "SEND_MESSAGE":
+    case 'SEND_MESSAGE':
       dispatch(addMessage(data.message));
       break;
-    case "ROOM_CREATED":
-      console.log(data);
+    case 'ROOM_CREATED':
       dispatch(setRoom(data.payload.id));
-      break
+      break;
     default:
   }
 };
