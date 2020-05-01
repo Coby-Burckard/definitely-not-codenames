@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {startAddMessage} from '../actions/chatActions';
 
@@ -7,10 +7,6 @@ const ChatInput = () => {
 
   // hooks
   const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    dispatch({type: 'WS_CONNECT', host: 'ws://localhost:8080'});
-  }, [dispatch]);
 
   // event handling
   const handleMessageChange = e => {

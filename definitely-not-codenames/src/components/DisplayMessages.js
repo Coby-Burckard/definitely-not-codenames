@@ -6,7 +6,7 @@ const DisplayMessages = () => {
   return (
     <div>
       {messages.map(message => (
-        <p>{message}</p>
+        <p key={message}>{message}</p>
       ))}
     </div>
   );

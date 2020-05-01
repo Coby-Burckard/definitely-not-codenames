@@ -1,10 +1,19 @@
-import React from "react";
-import AppRouter from "./routers/AppRouter";
+import React, {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import AppRouter from './routers/AppRouter';
 
-const App = () => (
-  <div>
-    <AppRouter />
-  </div>
-);
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({type: 'WS_CONNECT', host: 'ws://localhost:8080'});
+  }, [dispatch]);
+
+  return (
+    <div>
+      <AppRouter />
+    </div>
+  );
+};
 
 export default App;

@@ -1,7 +1,7 @@
-import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import HomePage from "../components/HomePage";
-import GamePage from "../components/GamePage";
+import React from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import HomePage from '../components/HomePage';
+import GamePage from '../components/GamePage';
 
 const AppRouter = () => {
   return (
