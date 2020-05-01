@@ -12,8 +12,8 @@ const socketMiddleware = () => {
     // store.dispatch(actions.wsDisconnected());
   };
 
-  const onMessage = (store) => (event) => {
-    receiver(store.dispatch, event.data);
+  const onMessage = ({dispatch}) => (event) => {
+    receiver(dispatch, event.data);
   };
 
   return (store) => (next) => (action) => {
@@ -45,7 +45,6 @@ const socketMiddleware = () => {
         socket.send(JSON.stringify(action.payload));
         break;
       default:
-        console.log("the next action:", action);
         return next(action);
     }
   };
