@@ -7,12 +7,12 @@ const RequestRoom = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const roomId = useSelector(state => state.room.room);
+  const roomId = useSelector(state => state.room.id);
   useEffect(() => {
     if (roomId) {
       history.push(`/game/${roomId}`);
     }
-  }, [roomId]);
+  }, [roomId, history]);
 
   const handleClick = () => {
     dispatch(startGetRoom());

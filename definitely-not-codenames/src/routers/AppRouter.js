@@ -8,7 +8,7 @@ const AppRouter = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/game/:id" component={GamePage} />
+        <Route path="/game/:roomID" component={GamePage} />
       </Switch>
     </BrowserRouter>
   );
