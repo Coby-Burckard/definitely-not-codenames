@@ -3,4 +3,8 @@ const wsSend = (message) => ({
   message,
 });
 
-export { wsSend };
+const wsGetRoom = () => ({
+  type: "WS_GET_ROOM",
+});
+
+export { wsSend, wsGetRoom };

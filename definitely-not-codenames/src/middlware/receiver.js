@@ -7,6 +7,7 @@ const receiver = (dispatch, data) => {
       dispatch(addMessage(data.message));
       break;
     case "SEND_ROOM_ID":
+      console.log(data);
       dispatch(setRoom(data.roomID));
     default:
   }
