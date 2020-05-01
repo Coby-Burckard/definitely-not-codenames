@@ -1,4 +1,4 @@
-import { addMessage } from "../actions/chatActions";
+import receiver from "./receiver";
 
 const socketMiddleware = () => {
   let socket = null;
@@ -13,8 +13,7 @@ const socketMiddleware = () => {
   };
 
   const onMessage = (store) => (event) => {
-    const payload = event.data;
-    store.dispatch(addMessage(event.data));
+    receiver(store.dispatch, event.data);
   };
 
   return (store) => (next) => (action) => {
