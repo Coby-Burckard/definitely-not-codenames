@@ -5,6 +5,7 @@ import { startJoinRoom } from "../actions/roomActions";
 import ChatInput from "./ChatInput";
 import DisplayMessages from "./DisplayMessages";
 import RoomUsersList from "./RoomUsersList";
+import TeamSelection from "./TeamSelection";
 
 const GamePage = () => {
   const { roomID } = useParams();
@@ -34,6 +35,7 @@ const GamePage = () => {
       <p>Chat</p>
       <ChatInput />
       <DisplayMessages />
+      <TeamSelection />
     </div>
   );
 };

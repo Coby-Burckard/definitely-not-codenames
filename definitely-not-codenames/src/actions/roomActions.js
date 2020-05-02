@@ -19,4 +19,33 @@ const setRoomUsers = users => ({
   users,
 });
 
-export { setRoom, startJoinRoom, startGetRoom, setRoomUsers };
+const startAssignTeam = team => dispatch => {
+  dispatch(
+    wsSend({
+      type: "ASSIGN_TEAM",
+      payload: {
+        team,
+      },
+    })
+  );
+};
+
+const startAssignRole = role => dispatch => {
+  dispatch(
+    wsSend({
+      type: "ASSIGN_ROLE",
+      payload: {
+        role,
+      },
+    })
+  );
+};
+
+export {
+  setRoom,
+  startJoinRoom,
+  startGetRoom,
+  setRoomUsers,
+  startAssignTeam,
+  startAssignRole,
+};

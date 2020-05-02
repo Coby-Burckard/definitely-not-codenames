@@ -25,7 +25,7 @@ const receiver = (dispatch, rawJSON) => {
       dispatch(setUser(data.payload.id));
       break;
     case "ROOM_USERS_UPDATED":
-      dispatch(setRoomUsers(data.payload.data));
+      dispatch(setRoomUsers(data.payload.users));
       break;
     default:
   }
