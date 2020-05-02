@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react';
-import {useParams} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
-import ChatInput from './ChatInput';
-import DisplayMessages from './DisplayMessages';
-import {startJoinRoom} from '../actions/roomActions';
+import React, { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { startJoinRoom } from "../actions/roomActions";
+import ChatInput from "./ChatInput";
+import DisplayMessages from "./DisplayMessages";
+import RoomUsersList from "./RoomUsersList";
 
 const GamePage = () => {
-  const {roomID} = useParams();
+  const { roomID } = useParams();
   const dispatch = useDispatch();
   const userID = useSelector(state => state.user.id);
 
@@ -18,6 +19,7 @@ const GamePage = () => {
 
   return (
     <div>
+      <Link to="/">Home</Link>
       <p>GamePage</p>
       <p>
         Room:
@@ -27,6 +29,9 @@ const GamePage = () => {
         User:
         {userID}
       </p>
+      <p>Users in room </p>
+      <RoomUsersList />
+      <p>Chat</p>
       <ChatInput />
       <DisplayMessages />
     </div>
