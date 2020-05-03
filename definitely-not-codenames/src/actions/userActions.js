@@ -1,4 +1,4 @@
-const setUser = userID => ({
+const setUser = (userID) => ({
   type: 'SET_USER',
   userID,
 });

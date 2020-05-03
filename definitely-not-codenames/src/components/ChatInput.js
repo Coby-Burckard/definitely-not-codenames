@@ -9,11 +9,11 @@ const ChatInput = () => {
   const [message, setMessage] = useState('');
 
   // event handling
-  const handleMessageChange = e => {
+  const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     dispatch(startAddMessage(message));

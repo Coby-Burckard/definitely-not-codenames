@@ -1,4 +1,4 @@
-const wsSend = payload => ({
+const wsSend = (payload) => ({
   type: 'WS_SEND',
   payload,
 });

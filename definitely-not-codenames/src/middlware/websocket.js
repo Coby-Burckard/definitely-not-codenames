@@ -3,19 +3,19 @@ import receiver from './receiver';
 const socketMiddleware = () => {
   let socket = null;
 
-  const onOpen = store => event => {
+  const onOpen = (store) => (event) => {
     // store.dispatch(actions.wsConnected(event.target.url));
   };
 
-  const onClose = store => () => {
+  const onClose = (store) => () => {
     // store.dispatch(actions.wsDisconnected());
   };
 
-  const onMessage = ({dispatch}) => event => {
+  const onMessage = ({dispatch}) => (event) => {
     receiver(dispatch, event.data);
   };
 
-  return store => next => action => {
+  return (store) => (next) => (action) => {
     switch (action.type) {
       case 'WS_CONNECT':
         if (socket !== null) {

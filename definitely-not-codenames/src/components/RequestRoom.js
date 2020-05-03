@@ -7,7 +7,7 @@ const RequestRoom = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const roomId = useSelector(state => state.room.id);
+  const roomId = useSelector((state) => state.room.id);
   useEffect(() => {
     if (roomId) {
       history.push(`/game/${roomId}`);

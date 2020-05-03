@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch} from 'react-redux';
 import {startAssignTeam, startAssignRole} from '../actions/roomActions';
 
-const TeamSelectionSide = props => {
+const TeamSelectionSide = (props) => {
   const dispatch = useDispatch();
 
   const handleJoinTeam = () => {
@@ -17,19 +17,19 @@ const TeamSelectionSide = props => {
 
   return (
     <div>
-      <button onClick={handleJoinTeam}>
+      <button onClick={handleJoinTeam} type="button">
         Join
         {props.color}
       </button>
-      {props.guessers.map(user => (
+      {props.guessers.map((user) => (
         <p>{user.id}</p>
       ))}
-      <button onClick={handleAssignMaster}>
-Become{props.color}
-{' '}
-Master
-</button>
-      {props.master.map(user => (
+      <button onClick={handleAssignMaster} type="button">
+        Become
+        {props.color}
+        Master
+      </button>
+      {props.master.map((user) => (
         <p>{user.id}</p>
       ))}
     </div>

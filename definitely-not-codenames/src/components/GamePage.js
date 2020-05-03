@@ -10,7 +10,7 @@ import TeamSelection from './TeamSelection';
 const GamePage = () => {
   const {roomID} = useParams();
   const dispatch = useDispatch();
-  const userID = useSelector(state => state.user.id);
+  const userID = useSelector((state) => state.user.id);
 
   useEffect(() => {
     if (userID) {

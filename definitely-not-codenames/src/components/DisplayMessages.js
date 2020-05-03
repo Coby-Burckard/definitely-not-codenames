@@ -2,10 +2,10 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 
 const DisplayMessages = () => {
-  const messages = useSelector(state => state.chat.messages);
+  const messages = useSelector((state) => state.chat.messages);
   return (
     <div>
-      {messages.map(message => (
+      {messages.map((message) => (
         <p key={message}>{message}</p>
       ))}
     </div>
