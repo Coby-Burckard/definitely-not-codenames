@@ -1,6 +1,6 @@
-import { addMessage } from "../actions/chatActions";
-import { setRoom, setRoomUsers } from "../actions/roomActions";
-import { setUser } from "../actions/userActions";
+import {addMessage} from '../actions/chatActions';
+import {setRoom, setRoomUsers} from '../actions/roomActions';
+import {setUser} from '../actions/userActions';
 
 const receiver = (dispatch, rawJSON) => {
   let data;
@@ -15,16 +15,16 @@ const receiver = (dispatch, rawJSON) => {
   console.log(data.type);
 
   switch (data.type) {
-    case "MESSAGE_RECEIVED":
+    case 'MESSAGE_RECEIVED':
       dispatch(addMessage(data.payload.message));
       break;
-    case "ROOM_CREATED":
+    case 'ROOM_CREATED':
       dispatch(setRoom(data.payload.id));
       break;
-    case "USER_CREATED":
+    case 'USER_CREATED':
       dispatch(setUser(data.payload.id));
       break;
-    case "ROOM_USERS_UPDATED":
+    case 'ROOM_USERS_UPDATED':
       dispatch(setRoomUsers(data.payload.users));
       break;
     default:

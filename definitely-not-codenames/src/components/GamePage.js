@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { startJoinRoom } from "../actions/roomActions";
-import ChatInput from "./ChatInput";
-import DisplayMessages from "./DisplayMessages";
-import RoomUsersList from "./RoomUsersList";
-import TeamSelection from "./TeamSelection";
+import React, {useEffect} from 'react';
+import {useParams, Link} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {startJoinRoom} from '../actions/roomActions';
+import ChatInput from './ChatInput';
+import DisplayMessages from './DisplayMessages';
+import RoomUsersList from './RoomUsersList';
+import TeamSelection from './TeamSelection';
 
 const GamePage = () => {
-  const { roomID } = useParams();
+  const {roomID} = useParams();
   const dispatch = useDispatch();
   const userID = useSelector(state => state.user.id);
 

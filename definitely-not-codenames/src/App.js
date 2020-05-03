@@ -1,14 +1,20 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import AppRouter from "./routers/AppRouter";
+import React, {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import AppRouter from './routers/AppRouter';
 
 const App = () => {
   const dispatch = useDispatch();
 
-  // digital ocean = 159.65.253.179
+  let backendHost = 'heroku';
+
+  if (backendHost === 'heroku') {
+    backendHost = 'serene-headland-98871.herokuapp.com/';
+  } else {
+    backendHost = 'localhost';
+  }
 
   useEffect(() => {
-    dispatch({ type: "WS_CONNECT", host: "ws://localhost:8080" });
+    dispatch({type: 'WS_CONNECT', host: `ws://${backendHost}:8080`});
   }, [dispatch]);
 
   return (

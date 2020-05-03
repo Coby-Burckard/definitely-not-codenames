@@ -1,22 +1,22 @@
-import React from "react";
-import TeamSelectionSide from "./TeamSelectionSide";
-import { useSelector } from "react-redux";
+import React from 'react';
+import {useSelector} from 'react-redux';
+import TeamSelectionSide from './TeamSelectionSide';
 
 const TeamSelection = () => {
   const gameUsers = useSelector(state => state.room.users);
 
-  //breaking into teams and roles
+  // breaking into teams and roles
   const redMaster = gameUsers.filter(
-    user => user.team === "RED" && user.role === "MASTER"
+    user => user.team === 'RED' && user.role === 'MASTER'
   );
   const blueMaster = gameUsers.filter(
-    user => user.team === "BLUE" && user.role === "MASTER"
+    user => user.team === 'BLUE' && user.role === 'MASTER'
   );
   const redGuessers = gameUsers.filter(
-    user => user.team === "RED" && user.role === "GUESSER"
+    user => user.team === 'RED' && user.role === 'GUESSER'
   );
   const blueGuessers = gameUsers.filter(
-    user => user.team === "BLUE" && user.role === "GUESSER"
+    user => user.team === 'BLUE' && user.role === 'GUESSER'
   );
   const unassinged = gameUsers.filter(user => !user.team || !user.role);
 
