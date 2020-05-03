@@ -22,7 +22,7 @@ const TeamSelectionSide = (props) => {
         {props.color}
       </button>
       {props.guessers.map((user) => (
-        <p>{user.id}</p>
+        <p>{user.name}</p>
       ))}
       <button onClick={handleAssignMaster} type="button">
         Become
@@ -30,7 +30,7 @@ const TeamSelectionSide = (props) => {
         Master
       </button>
       {props.master.map((user) => (
-        <p>{user.id}</p>
+        <p>{user.name}</p>
       ))}
     </div>
   );

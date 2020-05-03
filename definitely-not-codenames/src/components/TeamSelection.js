@@ -30,7 +30,7 @@ const TeamSelection = () => {
       <div>
         <p>Unassigned</p>
         {unassinged.map((user) => (
-          <p>{user.id}</p>
+          <p>{user.name}</p>
         ))}
       </div>
       <TeamSelectionSide

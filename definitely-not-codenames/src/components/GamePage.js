@@ -6,6 +6,7 @@ import ChatInput from './ChatInput';
 import DisplayMessages from './DisplayMessages';
 import RoomUsersList from './RoomUsersList';
 import TeamSelection from './TeamSelection';
+import NameModal from './NameModal';
 
 const GamePage = () => {
   const {roomID} = useParams();
@@ -20,6 +21,7 @@ const GamePage = () => {
 
   return (
     <div>
+      <NameModal />
       <Link to="/">Home</Link>
       <p>GamePage</p>
       <p>

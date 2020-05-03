@@ -5,7 +5,7 @@ import AppRouter from './routers/AppRouter';
 const App = () => {
   const dispatch = useDispatch();
 
-  let backendHost = 'heroku';
+  let backendHost = '';
 
   if (backendHost === 'heroku') {
     backendHost = 'serene-headland-98871.herokuapp.com/';
