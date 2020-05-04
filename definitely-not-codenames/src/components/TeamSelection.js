@@ -44,7 +44,7 @@ const TeamSelection = () => {
           >
             Start Game
           </button>
-          <p>Unassigned</p>
+          <p>Unassigned:</p>
           {unassinged.map((user) => (
             <p>{user.name}</p>
           ))}

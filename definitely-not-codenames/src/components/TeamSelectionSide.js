@@ -19,8 +19,7 @@ const TeamSelectionSide = (props) => {
     <div className={`team-selection__side ${props.color}`}>
       <div className="team-selection__role-container">
         <button onClick={handleJoinTeam} type="button">
-          Join
-          {props.color}
+          {`Join ${props.color}`}
         </button>
         {props.guessers.map((user) => (
           <p>{user.name}</p>
@@ -32,9 +31,7 @@ const TeamSelectionSide = (props) => {
           type="button"
           disabled={props.master.length > 0}
         >
-          Become
-          {props.color}
-          Master
+          {`Become ${props.color} Master`}
         </button>
         {props.master.map((user) => (
           <p>{user.name}</p>
