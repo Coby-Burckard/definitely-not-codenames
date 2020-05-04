@@ -9,13 +9,18 @@
 
 .team-selection__side {
   display: flex;
+  border-radius: $xs-size;
+  border-style: solid;
+  border-width: $xs-size;
   flex-direction: column;
   margin: $s-size $xl-size;
 }
 
 .team-selection__role-container {
   height: 10rem;
+  font-size: $s-size;
   margin-bottom: $s-size;
   justify-content: center;
   width: 15rem;
+  padding: 0 $s-size;
 }
