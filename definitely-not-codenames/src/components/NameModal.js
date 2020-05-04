@@ -30,7 +30,8 @@ const NameModal = () => {
 
   const handleCloseModal = () => {
     if (name) {
-      dispatch(setIsOpen(false));
+      dispatch(startSetName(name));
+      setIsOpen(false);
     }
   };
 

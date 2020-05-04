@@ -21,23 +21,25 @@ const TeamSelection = () => {
   const unassinged = gameUsers.filter((user) => !user.team || !user.role);
 
   return (
-    <div>
-      <TeamSelectionSide
-        color="RED"
-        guessers={redGuessers}
-        master={redMaster}
-      />
-      <div>
-        <p>Unassigned</p>
-        {unassinged.map((user) => (
-          <p>{user.name}</p>
-        ))}
+    <div className="team-selection">
+      <div className="team-selection__container">
+        <TeamSelectionSide
+          color="RED"
+          guessers={redGuessers}
+          master={redMaster}
+        />
+        <div>
+          <p>Unassigned</p>
+          {unassinged.map((user) => (
+            <p>{user.name}</p>
+          ))}
+        </div>
+        <TeamSelectionSide
+          color="BLUE"
+          guessers={blueGuessers}
+          master={blueMaster}
+        />
       </div>
-      <TeamSelectionSide
-        color="BLUE"
-        guessers={blueGuessers}
-        master={blueMaster}
-      />
     </div>
   );
 };

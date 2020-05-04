@@ -6,7 +6,6 @@ const addMessage = (message) => ({
 });
 
 const startAddMessage = (message) => (dispatch) => {
-  dispatch(addMessage(message));
   dispatch(wsSend({type: 'SEND_MESSAGE', payload: {message}}));
 };
 

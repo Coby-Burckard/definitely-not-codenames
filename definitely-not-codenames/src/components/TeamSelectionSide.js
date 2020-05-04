@@ -16,22 +16,26 @@ const TeamSelectionSide = (props) => {
   };
 
   return (
-    <div>
-      <button onClick={handleJoinTeam} type="button">
-        Join
-        {props.color}
-      </button>
-      {props.guessers.map((user) => (
-        <p>{user.name}</p>
-      ))}
-      <button onClick={handleAssignMaster} type="button">
-        Become
-        {props.color}
-        Master
-      </button>
-      {props.master.map((user) => (
-        <p>{user.name}</p>
-      ))}
+    <div className={`team-selection__side ${props.color}`}>
+      <div className="team-selection__role-container">
+        <button onClick={handleJoinTeam} type="button">
+          Join
+          {props.color}
+        </button>
+        {props.guessers.map((user) => (
+          <p>{user.name}</p>
+        ))}
+      </div>
+      <div className="team-selection__role-container">
+        <button onClick={handleAssignMaster} type="button">
+          Become
+          {props.color}
+          Master
+        </button>
+        {props.master.map((user) => (
+          <p>{user.name}</p>
+        ))}
+      </div>
     </div>
   );
 };
