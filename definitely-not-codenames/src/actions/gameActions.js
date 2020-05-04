@@ -14,4 +14,13 @@ const startClickCard = (i) => (dispatch) => {
   );
 };
 
-export {setGameState, startClickCard};
+const startSetClue = (clueWord, clueNumber) => (dispatch) => {
+  dispatch(
+    wsSend({
+      type: 'SET_CLUE',
+      payload: {clueWord, clueNumber},
+    })
+  );
+};
+
+export {setGameState, startClickCard, startSetClue};

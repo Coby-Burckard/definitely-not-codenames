@@ -36,4 +36,16 @@ const rolesFilledSelector = (state) => {
   };
 };
 
-export {rolesFilledSelector};
+const selfIsHintGiver = (state) => {
+  const {turnColor, mode} = state.game.gameState;
+  const {role, team} = state.user;
+
+  const modeTranslated = mode === 'HINTING' ? 'MASTER' : 'GUESSER';
+
+  if (turnColor === team && role === modeTranslated) {
+    return true;
+  }
+  return false;
+};
+
+export {rolesFilledSelector, selfIsHintGiver};

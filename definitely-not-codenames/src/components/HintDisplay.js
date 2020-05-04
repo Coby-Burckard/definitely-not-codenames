@@ -1,0 +1,19 @@
+import React from 'react';
+import {useSelector} from 'react-redux';
+
+const HintDisplay = () => {
+  const {clueWord, clueNumber} = useSelector((state) => state.game.gameState);
+  const clueReceived = clueWord && clueNumber;
+
+  return (
+    <div>
+      {clueReceived ? (
+        <p>{`${clueWord} ${clueNumber}`}</p>
+      ) : (
+        <p>awaiting clue....</p>
+      )}
+    </div>
+  );
+};
+
+export default HintDisplay;

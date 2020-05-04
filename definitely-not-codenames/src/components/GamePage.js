@@ -8,6 +8,7 @@ import RoomUsersList from './RoomUsersList';
 import TeamSelection from './TeamSelection';
 import NameModal from './NameModal';
 import GameGrid from './GameGrid';
+import HintContainer from './HintContainer';
 
 const GamePage = () => {
   const {roomID} = useParams();
@@ -40,6 +41,7 @@ const GamePage = () => {
       <ChatInput />
       <DisplayMessages />
       {gameStarted && <GameGrid />}
+      {gameStarted && <HintContainer />}
       <TeamSelection />
     </div>
   );
