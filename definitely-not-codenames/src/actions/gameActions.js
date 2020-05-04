@@ -1,6 +1,17 @@
+import {wsSend} from './webSocketActions';
+
 const setGameState = (game) => ({
   type: 'SET_GAME_STATE',
   game,
 });
 
-export {setGameState};
+const startClickCard = (i) => (dispatch) => {
+  dispatch(
+    wsSend({
+      type: 'CLICK_CARD',
+      payload: {i},
+    })
+  );
+};
+
+export {setGameState, startClickCard};

@@ -1,10 +1,9 @@
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import GameCard from './GameCard';
 
 const GameGrid = () => {
   const gameState = useSelector((state) => state.game.gameState);
-  const dispatch = useDispatch();
 
   return (
     <div className="game-grid">

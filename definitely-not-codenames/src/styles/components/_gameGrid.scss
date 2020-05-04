@@ -29,6 +29,64 @@
 
   &:hover {
     background-color: lighten($color: $light-gray, $amount: 10%);
-    transform: scale(1.02);
+    transform: scale(1.05);
+  }
+}
+
+.game-grid__card--clicked {
+  &:hover{
+    background-color: inherit;
+    transform: unset;
+  }
+}
+
+.game-grid__card--BLUE {
+  @extend .game-grid__card;
+
+  background-color: $blue;
+  color: white;
+
+  &:hover {
+    background-color: $blue;
+    transform: scale(1);
+  }
+}
+
+
+.game-grid__card--RED {
+  @extend .game-grid__card;
+
+  background-color: $red;
+  color: white;
+
+  &:hover {
+    background-color: $red;
+    transform: scale(1);
+  }
+}
+
+
+.game-grid__card--WHITE {
+  @extend .game-grid__card;
+
+  background-color: $tan;
+  color: black;
+
+  &:hover {
+    background-color: $tan;
+    transform: scale(1);
+  }
+}
+
+
+.game-grid__card--BLACK {
+  @extend .game-grid__card;
+
+  background-color: $black;
+  color: white;
+
+  &:hover {
+    background-color: $black;
+    transform: scale(1);
   }
 }
