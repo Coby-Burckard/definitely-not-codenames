@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch({type: 'WS_CONNECT', host: `ws://${backendHost}:8080`});
-  }, [dispatch]);
+  }, [dispatch, backendHost]);
 
   return (
     <div>

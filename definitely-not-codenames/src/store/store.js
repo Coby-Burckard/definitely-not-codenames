@@ -4,12 +4,14 @@ import chatReducer from '../reducers/chatReducer';
 import websocketMiddleware from '../middlware/websocket';
 import roomReducer from '../reducers/roomReducer';
 import userReducer from '../reducers/userReducer';
+import gameReducer from '../reducers/gameReducer';
 
 const store = configureStore({
   reducer: {
     chat: chatReducer,
     room: roomReducer,
     user: userReducer,
+    game: gameReducer,
   },
   middleware: [...getDefaultMiddleware(), websocketMiddleware],
 });

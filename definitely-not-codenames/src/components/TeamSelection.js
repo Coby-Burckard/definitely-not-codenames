@@ -1,8 +1,10 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {startStartGame} from '../actions/roomActions';
 import TeamSelectionSide from './TeamSelectionSide';
 
 const TeamSelection = () => {
+  const dispatch = useDispatch();
   const gameUsers = useSelector((state) => state.room.users);
 
   // breaking into teams and roles
@@ -20,6 +22,10 @@ const TeamSelection = () => {
   );
   const unassinged = gameUsers.filter((user) => !user.team || !user.role);
 
+  const handleStartGame = () => {
+    dispatch(startStartGame());
+  };
+
   return (
     <div className="team-selection">
       <div className="team-selection__container">
@@ -29,6 +35,9 @@ const TeamSelection = () => {
           master={redMaster}
         />
         <div>
+          <button type="button" onClick={handleStartGame}>
+            Start Game
+          </button>
           <p>Unassigned</p>
           {unassinged.map((user) => (
             <p>{user.name}</p>

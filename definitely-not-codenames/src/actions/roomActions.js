@@ -41,6 +41,15 @@ const startAssignRole = (role) => (dispatch) => {
   );
 };
 
+const startStartGame = () => (dispatch) => {
+  dispatch(
+    wsSend({
+      type: 'START_GAME',
+      payload: {},
+    })
+  );
+};
+
 export {
   setRoom,
   startJoinRoom,
@@ -48,4 +57,5 @@ export {
   setRoomUsers,
   startAssignTeam,
   startAssignRole,
+  startStartGame,
 };
