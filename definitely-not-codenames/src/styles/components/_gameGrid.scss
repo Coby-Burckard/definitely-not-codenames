@@ -1,0 +1,34 @@
+.game-grid {
+  margin-bottom: 3rem;
+}
+
+.game-grid__container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+  width: 80rem;
+  height: 40rem;
+}
+
+.game-grid__card {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $xs-size;
+  text-align: center;
+  background-color: $light-gray;
+  color: black;
+  font-size: $s-size;
+  font-weight: 600;
+  letter-spacing: 0.13rem;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: lighten($color: $light-gray, $amount: 10%);
+    transform: scale(1.02);
+  }
+}

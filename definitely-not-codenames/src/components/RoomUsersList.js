@@ -7,7 +7,7 @@ const RoomUsersList = () => {
   return (
     <div>
       {users.map((user) => (
-        <p>{user.id}</p>
+        <p key={user.id}>{user.id}</p>
       ))}
     </div>
   );

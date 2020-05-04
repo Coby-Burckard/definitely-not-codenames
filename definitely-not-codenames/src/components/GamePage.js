@@ -7,11 +7,13 @@ import DisplayMessages from './DisplayMessages';
 import RoomUsersList from './RoomUsersList';
 import TeamSelection from './TeamSelection';
 import NameModal from './NameModal';
+import GameGrid from './GameGrid';
 
 const GamePage = () => {
   const {roomID} = useParams();
   const dispatch = useDispatch();
   const userID = useSelector((state) => state.user.id);
+  const gameStarted = useSelector((state) => state.game.started);
 
   useEffect(() => {
     if (userID) {
@@ -37,6 +39,7 @@ const GamePage = () => {
       <p>Chat</p>
       <ChatInput />
       <DisplayMessages />
+      {gameStarted && <GameGrid />}
       <TeamSelection />
     </div>
   );
