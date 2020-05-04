@@ -5,13 +5,12 @@ const setUser = (userID) => ({
   userID,
 });
 
-const setName = (name) => ({
-  type: 'SET_NAME',
-  name,
+const updateUser = (users) => ({
+  type: 'UPDATE_USER',
+  users,
 });
 
 const startSetName = (name) => (dispatch) => {
-  dispatch(setName(name));
   dispatch(
     wsSend({
       type: 'ASSIGN_NAME',
@@ -20,4 +19,4 @@ const startSetName = (name) => (dispatch) => {
   );
 };
 
-export {setUser, setName, startSetName};
+export {setUser, updateUser, startSetName};

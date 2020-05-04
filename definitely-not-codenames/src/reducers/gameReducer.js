@@ -2,6 +2,7 @@ import {createReducer} from '@reduxjs/toolkit';
 
 const initialState = {
   gameState: null,
+  started: false,
 };
 
 const gameReducer = createReducer(initialState, {
@@ -9,6 +10,7 @@ const gameReducer = createReducer(initialState, {
     const {game} = action;
 
     state.gameState = game;
+    state.started = true;
   },
 });
 

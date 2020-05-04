@@ -2,10 +2,12 @@ import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {startStartGame} from '../actions/roomActions';
 import TeamSelectionSide from './TeamSelectionSide';
+import {rolesFilledSelector} from '../selectors/gameSelectors';
 
 const TeamSelection = () => {
   const dispatch = useDispatch();
   const gameUsers = useSelector((state) => state.room.users);
+  const {allRolesFilled} = useSelector(rolesFilledSelector);
 
   // breaking into teams and roles
   const redMaster = gameUsers.filter(
@@ -35,7 +37,11 @@ const TeamSelection = () => {
           master={redMaster}
         />
         <div>
-          <button type="button" onClick={handleStartGame}>
+          <button
+            type="button"
+            onClick={handleStartGame}
+            disabled={!allRolesFilled}
+          >
             Start Game
           </button>
           <p>Unassigned</p>

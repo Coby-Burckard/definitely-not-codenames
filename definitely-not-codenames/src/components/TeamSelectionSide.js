@@ -27,7 +27,11 @@ const TeamSelectionSide = (props) => {
         ))}
       </div>
       <div className="team-selection__role-container">
-        <button onClick={handleAssignMaster} type="button">
+        <button
+          onClick={handleAssignMaster}
+          type="button"
+          disabled={props.master.length > 0}
+        >
           Become
           {props.color}
           Master
