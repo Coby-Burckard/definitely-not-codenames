@@ -13,7 +13,8 @@ const GameCard = ({card, index}) => {
   return (
     <button
       className={classNames('game-grid__card', {
-        [`game-grid__card--clicked game-grid__card--${card.color}`]: card.touched,
+        'game-grid__card--unclicked': !card.touched,
+        [`game-grid__card--${card.color}`]: card.touched,
       })}
       type="button"
       onClick={handleClickCard}
