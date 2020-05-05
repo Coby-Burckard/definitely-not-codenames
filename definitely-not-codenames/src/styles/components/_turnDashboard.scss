@@ -1,4 +1,64 @@
 .turn-dashboard {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: $grid-width;
+
+}
+
+.turn-dashboard__side-display {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.turn-dashboard__RED {
+  color: $red;
+}
+
+.turn-dashboard__BLUE {
+  color: $blue;
+}
+
+.turn-dashboard__guesses-text {
+  font-size: $xl-size;
+  margin: 0;
+}
+
+.turn-dashboard__side-text-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.turn-dashboard__side-title {
+  text-align: center;
+  font-size: $l-size;
+  font-weight: normal;
+  margin: 0 0 $s-size 0;
+}
+
+.turn-dashboard__remaining-text {
+  font-size: $xl-size;
+}
+
+.turn-dashboard__button {
+  background-color: white;
+  border-radius: $xs-size;
+  cursor: pointer;
+  font-size: $l-size;
+  height: 6rem;
+  margin: auto 0;
+  width: 17rem;
+}
+
+.turn-dashboard__button--BLUE {
+  @extend .turn-dashboard__button;
+  color: $blue;
+  border: $xs-size solid $blue;
+}
+
+.turn-dashboard__button--RED {
+  @extend .turn-dashboard__button;
+  color: $red;
+  border: $xs-size solid $red;
 }

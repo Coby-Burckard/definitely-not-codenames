@@ -7,6 +7,8 @@ import {startClickPass} from '../actions/gameActions';
 const TurnDashboard = () => {
   const dispatch = useDispatch();
 
+  const {turnColor} = useSelector((state) => state.game.gameState);
+
   let {
     guessedCount,
     clueNumber,
@@ -14,7 +16,9 @@ const TurnDashboard = () => {
     blueClickedCount,
   } = useSelector((state) => state.game.gameState);
 
-  if (!clueNumber) {
+  if (clueNumber) {
+    clueNumber += 1;
+  } else {
     clueNumber = '-';
     guessedCount = '-';
   }
@@ -26,22 +30,32 @@ const TurnDashboard = () => {
   return (
     <div className="turn-dashboard">
       <div className="turn-dashboard__side-display">
-        <p>Guesses Used</p>
-        <p>{guessedCount}</p>
-        <p>Max Guesses</p>
-        <p>{clueNumber + 1}</p>
+        <h2 className="turn-dashboard__side-title">Guesses</h2>
+        <p
+          className={`turn-dashboard__${turnColor} turn-dashboard__guesses-text`}
+        >
+          {guessedCount}
+          <span> / </span>
+          {clueNumber}
+        </p>
       </div>
       <button
-        className="turn-dashboard__button"
+        className={`turn-dashboard__button--${turnColor}`}
         type="button"
         onClick={handlePass}
       >
         End Turn
       </button>
       <div className="turn-dashboard__side-display">
-        <p>Cards left</p>
-        <p>{9 - redClickedCount}</p>
-        <p>{8 - blueClickedCount}</p>
+        <h2 className="turn-dashboard__side-title">Remaining</h2>
+        <div className="turn-dashboard__side-text-container">
+          <span className="turn-dashboard__RED turn-dashboard__remaining-text">
+            {9 - redClickedCount}
+          </span>
+          <span className="turn-dashboard__BLUE turn-dashboard__remaining-text">
+            {8 - blueClickedCount}
+          </span>
+        </div>
       </div>
     </div>
   );

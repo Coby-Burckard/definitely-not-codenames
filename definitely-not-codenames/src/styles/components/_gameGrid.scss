@@ -7,23 +7,23 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 1rem;
-  width: 60rem;
+  width: $grid-width;
   height: 30rem;
 }
 
 .game-grid__card {
-  outline: none;
-  border: none;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: $xs-size;
-  text-align: center;
   background-color: $light-gray;
+  border: none;
+  border-radius: $xs-size;
   color: black;
+  display: flex;
   font-size: $s-size;
   font-weight: 600;
-  letter-spacing: 0.13rem;
+  justify-content: center;
+  letter-spacing: 0.09rem;
+  outline: none;
+  text-align: center;
   transition: background-color $transition-time ease;
   transition: transform $transition-time ease;
 }
