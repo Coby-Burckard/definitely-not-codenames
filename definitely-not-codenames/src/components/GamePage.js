@@ -4,12 +4,12 @@ import {useDispatch, useSelector} from 'react-redux';
 import {startJoinRoom} from '../actions/roomActions';
 import ChatInput from './ChatInput';
 import DisplayMessages from './DisplayMessages';
-import RoomUsersList from './RoomUsersList';
 import TeamSelection from './TeamSelection';
 import NameModal from './NameModal';
 import GameGrid from './GameGrid';
 import TurnDashboard from './TurnDashboard';
 import HintContainer from './HintContainer';
+import GameEndModal from './GameEndModal';
 
 const GamePage = () => {
   const {roomID} = useParams();
@@ -31,6 +31,7 @@ const GamePage = () => {
       {gameStarted && <GameGrid />}
       {gameStarted && <TurnDashboard />}
       <TeamSelection />
+      <GameEndModal />
       <p>Chat</p>
       <ChatInput />
     </div>

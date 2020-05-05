@@ -1,7 +1,7 @@
 import {createReducer} from '@reduxjs/toolkit';
 
 const initialState = {
-  gameState: null,
+  gameState: {mode: null},
   started: false,
 };
 
