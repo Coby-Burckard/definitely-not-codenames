@@ -18,9 +18,11 @@ const HintInput = () => {
     setHintNumber(e.target.value);
   };
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
     if (hintWord && hintNumber) {
-      dispatch(startSetClue(hintWord, hintNumber));
+      dispatch(startSetClue(hintWord, Number(hintNumber)));
     }
   };
 
@@ -40,6 +42,7 @@ const HintInput = () => {
           onChange={handleHintNumberChange}
           placeholder="hint number"
         />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

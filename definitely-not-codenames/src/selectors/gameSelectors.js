@@ -40,9 +40,7 @@ const selfIsHintGiver = (state) => {
   const {turnColor, mode} = state.game.gameState;
   const {role, team} = state.user;
 
-  const modeTranslated = mode === 'HINTING' ? 'MASTER' : 'GUESSER';
-
-  if (turnColor === team && role === modeTranslated) {
+  if (turnColor === team && role === 'MASTER' && mode === 'HINTING') {
     return true;
   }
   return false;
