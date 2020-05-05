@@ -32,4 +32,19 @@ const startClickPass = () => (dispatch) => {
   );
 };
 
-export {setGameState, startClickCard, startSetClue, startClickPass};
+const startNewGame = () => (dispatch) => {
+  dispatch(
+    wsSend({
+      type: 'START_NEW_GAME',
+      payload: {},
+    })
+  );
+};
+
+export {
+  setGameState,
+  startClickCard,
+  startSetClue,
+  startClickPass,
+  startNewGame,
+};
