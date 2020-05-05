@@ -23,4 +23,13 @@ const startSetClue = (clueWord, clueNumber) => (dispatch) => {
   );
 };
 
-export {setGameState, startClickCard, startSetClue};
+const startClickPass = () => (dispatch) => {
+  dispatch(
+    wsSend({
+      type: 'CLICK_PASS',
+      payload: {},
+    })
+  );
+};
+
+export {setGameState, startClickCard, startSetClue, startClickPass};

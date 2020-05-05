@@ -8,6 +8,7 @@ import RoomUsersList from './RoomUsersList';
 import TeamSelection from './TeamSelection';
 import NameModal from './NameModal';
 import GameGrid from './GameGrid';
+import TurnDashboard from './TurnDashboard';
 import HintContainer from './HintContainer';
 
 const GamePage = () => {
@@ -25,24 +26,13 @@ const GamePage = () => {
   return (
     <div>
       <NameModal />
-      <Link to="/">Home</Link>
-      <p>GamePage</p>
-      <p>
-        Room:
-        {roomID}
-      </p>
-      <p>
-        User:
-        {userID}
-      </p>
-      <p>Users in room </p>
-      <RoomUsersList />
+      <DisplayMessages />
+      {gameStarted && <HintContainer />}
+      {gameStarted && <GameGrid />}
+      {gameStarted && <TurnDashboard />}
+      <TeamSelection />
       <p>Chat</p>
       <ChatInput />
-      <DisplayMessages />
-      {gameStarted && <GameGrid />}
-      {gameStarted && <HintContainer />}
-      <TeamSelection />
     </div>
   );
 };
