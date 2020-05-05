@@ -40,7 +40,7 @@ const NameModal = () => {
       <Modal isOpen={isOpen} onRequestClose={handleCloseModal}>
         <form onSubmit={handleNameSubmission}>
           <h2>Name</h2>
-          <input value={name} onChange={handleNameUpdate} />
+          <input autoFocus value={name} onChange={handleNameUpdate} />
           <button type="submit">Save</button>
         </form>
       </Modal>
