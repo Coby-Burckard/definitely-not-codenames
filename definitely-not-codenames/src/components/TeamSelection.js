@@ -8,6 +8,7 @@ const TeamSelection = () => {
   const dispatch = useDispatch();
   const gameUsers = useSelector((state) => state.room.users);
   const {allRolesFilled} = useSelector(rolesFilledSelector);
+  const {started} = useSelector((state) => state.game);
 
   // breaking into teams and roles
   const redMaster = gameUsers.filter(
@@ -37,13 +38,15 @@ const TeamSelection = () => {
           master={redMaster}
         />
         <div>
-          <button
-            type="button"
-            onClick={handleStartGame}
-            disabled={!allRolesFilled}
-          >
-            Start Game
-          </button>
+          {!started && (
+            <button
+              type="button"
+              onClick={handleStartGame}
+              disabled={!allRolesFilled}
+            >
+              Start Game
+            </button>
+          )}
           <p>Unassigned:</p>
           {unassinged.map((user) => (
             <p key={user.id}>{user.name}</p>

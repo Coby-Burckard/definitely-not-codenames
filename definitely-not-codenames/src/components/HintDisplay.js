@@ -7,11 +7,9 @@ const HintDisplay = () => {
 
   return (
     <div>
-      {clueReceived ? (
-        <p>{`${clueWord} ${clueNumber}`}</p>
-      ) : (
-        <p>awaiting clue....</p>
-      )}
+      <p className="hint__message">
+        {clueReceived ? `${clueWord} ${clueNumber}` : 'awaiting clue...'}
+      </p>
     </div>
   );
 };

@@ -1,0 +1,73 @@
+.hint {
+  align-items: center;
+  border-radius: $xs-size;
+  border-style: solid;
+  border-width: $xs-size;
+  display: flex;
+  justify-content: center;
+  height: 8rem;
+  margin: $m-size auto;
+  width: 30rem;
+}
+
+.hint__message {
+  color: white;
+  font-size: $ml-size;
+}
+
+.hint__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.hint__input-container {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: $s-size;
+}
+
+.hint__input {
+  background-color: none;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: $m-size;
+  outline: none;
+  padding-bottom: 0.2rem;
+
+  &::placeholder{
+    color: white;
+  }
+
+  &:-ms-input-placeholder{
+    color: white;
+  }
+}
+
+.hint__input--word {
+  width: 12rem;
+  @extend .hint__input;
+}
+
+.hint__input--number {
+  width: 3rem;
+  margin-left: $m-size;
+  @extend .hint__input;
+}
+
+.hint__input--RED {
+  background-color: $light-red;
+}
+
+.hint__input--BLUE {
+  background-color: $light-blue;
+}
+
+.hint__button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: $m-size;
+  outline: none;
+}

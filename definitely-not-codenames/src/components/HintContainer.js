@@ -11,7 +11,7 @@ const HintContainer = () => {
 
   return (
     <div
-      className={classNames({
+      className={classNames('hint', {
         RED: turnColor === 'RED',
         BLUE: turnColor === 'BLUE',
       })}

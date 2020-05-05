@@ -14,7 +14,6 @@
 .game-grid__card {
   outline: none;
   border: none;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +30,8 @@
 
 
 .game-grid__card--unclicked {
+  cursor: pointer;
+
   &:hover {
     background-color: lighten($color: $light-gray, $amount: 10%);
     transform: scale(1.05);
@@ -58,4 +59,8 @@
 .game-grid__card--BLACK {
   background-color: $black;
   color: white;
+}
+
+.game-grid__card--opaque {
+  opacity: 25%;
 }

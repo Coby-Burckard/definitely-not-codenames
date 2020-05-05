@@ -1,10 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {startClickCard} from '../actions/gameActions';
 
 const GameCard = ({card, index}) => {
   const dispatch = useDispatch();
+
+  const role = useSelector((state) => state.user.role);
 
   const handleClickCard = () => {
     dispatch(startClickCard(index));
@@ -13,8 +15,9 @@ const GameCard = ({card, index}) => {
   return (
     <button
       className={classNames('game-grid__card', {
-        'game-grid__card--unclicked': !card.touched,
-        [`game-grid__card--${card.color}`]: card.touched,
+        'game-grid__card--unclicked': !card.touched && role !== 'MASTER',
+        'game-grid__card--opaque': role === 'MASTER' && card.touched,
+        [`game-grid__card--${card.color}`]: card.touched || role === 'MASTER',
       })}
       type="button"
       onClick={handleClickCard}
