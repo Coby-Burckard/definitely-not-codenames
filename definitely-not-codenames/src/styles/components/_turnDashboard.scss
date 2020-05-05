@@ -48,17 +48,22 @@
   font-size: $l-size;
   height: 6rem;
   margin: auto 0;
+  outline: none;
   width: 17rem;
+
+  &:focus {
+    outline: none
+  }
 }
 
 .turn-dashboard__button--BLUE {
   @extend .turn-dashboard__button;
-  color: $blue;
   border: $xs-size solid $blue;
+  color: $blue;
 }
 
 .turn-dashboard__button--RED {
   @extend .turn-dashboard__button;
-  color: $red;
   border: $xs-size solid $red;
+  color: $red;
 }

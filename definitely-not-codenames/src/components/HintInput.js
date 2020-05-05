@@ -16,13 +16,16 @@ const HintInput = () => {
   };
 
   const handleHintNumberChange = (e) => {
-    setHintNumber(e.target.value);
+    const newNumber = e.target.value;
+    if (newNumber >= -1 && newNumber <= 9) {
+      setHintNumber(newNumber);
+    }
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (hintWord && hintNumber) {
+    if (hintWord && hintNumber >= -1 && hintNumber <= 9) {
       dispatch(startSetClue(hintWord, Number(hintNumber)));
     }
   };

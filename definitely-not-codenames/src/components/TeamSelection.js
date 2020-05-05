@@ -11,7 +11,7 @@ const TeamSelection = () => {
   const dispatch = useDispatch();
   const gameUsers = useSelector((state) => state.room.users);
   const {allRolesFilled} = useSelector(rolesFilledSelector);
-  const {started} = useSelector(gameStartedSelector);
+  const started = useSelector(gameStartedSelector);
 
   // breaking into teams and roles
   const redMaster = gameUsers.filter(

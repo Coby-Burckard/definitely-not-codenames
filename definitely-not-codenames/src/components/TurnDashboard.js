@@ -16,6 +16,8 @@ const TurnDashboard = () => {
     blueClickedCount,
   } = useSelector((state) => state.game.gameState);
 
+  const hasInfiniteGuesses = clueNumber === 0 || clueNumber === -1;
+
   if (clueNumber) {
     clueNumber += 1;
   } else {
@@ -34,9 +36,14 @@ const TurnDashboard = () => {
         <p
           className={`turn-dashboard__${turnColor} turn-dashboard__guesses-text`}
         >
-          {guessedCount}
-          <span> / </span>
-          {clueNumber}
+          {hasInfiniteGuesses && <span>∞</span>}
+          {!hasInfiniteGuesses && (
+            <span>
+              {guessedCount}
+              <span>/</span>
+              {clueNumber}
+            </span>
+          )}
         </p>
       </div>
       <button
