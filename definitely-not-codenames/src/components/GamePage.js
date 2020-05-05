@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {useParams, Link} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {startJoinRoom} from '../actions/roomActions';
 import ChatInput from './ChatInput';
@@ -10,12 +10,13 @@ import GameGrid from './GameGrid';
 import TurnDashboard from './TurnDashboard';
 import HintContainer from './HintContainer';
 import GameEndModal from './GameEndModal';
+import {gameStartedSelector} from '../selectors/gameSelectors';
 
 const GamePage = () => {
   const {roomID} = useParams();
   const dispatch = useDispatch();
   const userID = useSelector((state) => state.user.id);
-  const gameStarted = useSelector((state) => state.game.started);
+  const gameStarted = useSelector(gameStartedSelector);
 
   useEffect(() => {
     if (userID) {

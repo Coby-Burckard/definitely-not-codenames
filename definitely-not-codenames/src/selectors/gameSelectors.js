@@ -46,4 +46,6 @@ const selfIsHintGiver = (state) => {
   return false;
 };
 
-export {rolesFilledSelector, selfIsHintGiver};
+const gameStartedSelector = (state) => state.game.gameState.started;
+
+export {rolesFilledSelector, selfIsHintGiver, gameStartedSelector};

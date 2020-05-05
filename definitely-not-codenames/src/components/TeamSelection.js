@@ -2,13 +2,16 @@ import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {startStartGame} from '../actions/roomActions';
 import TeamSelectionSide from './TeamSelectionSide';
-import {rolesFilledSelector} from '../selectors/gameSelectors';
+import {
+  rolesFilledSelector,
+  gameStartedSelector,
+} from '../selectors/gameSelectors';
 
 const TeamSelection = () => {
   const dispatch = useDispatch();
   const gameUsers = useSelector((state) => state.room.users);
   const {allRolesFilled} = useSelector(rolesFilledSelector);
-  const {started} = useSelector((state) => state.game);
+  const {started} = useSelector(gameStartedSelector);
 
   // breaking into teams and roles
   const redMaster = gameUsers.filter(
