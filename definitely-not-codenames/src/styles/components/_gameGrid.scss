@@ -6,7 +6,7 @@
   margin: auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 0.8rem;
   width: $grid-width;
   height: 30rem;
 }
@@ -21,7 +21,7 @@
   font-size: $s-size;
   font-weight: 600;
   justify-content: center;
-  letter-spacing: 0.09rem;
+  letter-spacing: 0.05rem;
   outline: none;
   text-align: center;
   transition: background-color $transition-time ease;
