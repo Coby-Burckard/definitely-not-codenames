@@ -10,32 +10,44 @@ const TeamSelectionSide = (props) => {
     dispatch(startAssignRole('GUESSER'));
   };
 
-  const handleAssignMaster = () => {
+  const handleAssignMaster = (e) => {
+    e.stopPropagation();
     dispatch(startAssignTeam(props.color));
     dispatch(startAssignRole('MASTER'));
   };
 
+  const isRedTeam = props.color === 'RED';
+
+  const master = props.master[0];
+
   return (
     <div className={`team-selection__side ${props.color}`}>
-      <div className="team-selection__role-container">
-        <button onClick={handleJoinTeam} type="button">
-          {`Join ${props.color}`}
-        </button>
-        {props.guessers.map((user) => (
-          <p>{user.name}</p>
-        ))}
-      </div>
-      <div className="team-selection__role-container">
+      <button
+        className="team-selection__guesser-container"
+        onClick={handleJoinTeam}
+        type="button"
+      >
+        <span type="button" className="team-selection__label">
+          {`${isRedTeam ? 'Red' : 'Blue'} Team`}
+        </span>
+        <ul className="team-selection__user-list">
+          {props.guessers.map((user) => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </ul>
+      </button>
+      <div className="team-selection__master-container">
         <button
           onClick={handleAssignMaster}
           type="button"
           disabled={props.master.length > 0}
+          className="team-selection__master-button"
         >
-          {`Become ${props.color} Master`}
+          {master ? 'Spymaster:' : 'Become Spymaster'}
         </button>
-        {props.master.map((user) => (
-          <p>{user.name}</p>
-        ))}
+        {master && (
+          <span className="team-selection__master-name">{master.name}</span>
+        )}
       </div>
     </div>
   );

@@ -7,20 +7,78 @@
   display: flex;
 }
 
+.team-selection__label {
+  border: none;
+  margin: $xs-size 0;
+  padding: 0;
+  border-bottom: 2px solid white;
+
+  &:disabled {
+    color: $light-gray;
+    border-bottom: 2px solid $light-gray;
+  }
+}
+
+.team-selection__user-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .team-selection__side {
+  align-items: center;
+  color: white;
   display: flex;
   border-radius: $xs-size;
   border-style: solid;
   border-width: $xs-size;
   flex-direction: column;
+  font-size: $s-size;
   margin: $s-size $xl-size;
+
 }
 
-.team-selection__role-container {
+.team-selection__guesser-container {
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
   height: 10rem;
-  font-size: $s-size;
-  margin-bottom: $s-size;
-  justify-content: center;
-  width: 15rem;
+  outline: none;
   padding: 0 $s-size;
+  width: 15rem;
+}
+
+.team-selection__master-container {
+  display: flex;
+  flex-direction: column;
+  height: 4rem;
+  text-align: center;
+}
+
+.team-selection__master-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  transition: font-size 0.2s ease;
+
+  &:hover {
+    border-bottom: 2px solid white;
+  }
+
+  &:disabled {
+    border-bottom: none;
+    cursor: default;
+    font-size: 0.8rem;
+  }
+}
+
+.team-selection__master-name {
+  cursor: default;
 }
