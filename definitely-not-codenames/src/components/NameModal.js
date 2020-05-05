@@ -37,7 +37,11 @@ const NameModal = () => {
 
   return (
     <div>
-      <Modal isOpen={isOpen} onRequestClose={handleCloseModal}>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={handleCloseModal}
+        ariaHideApp={false}
+      >
         <form onSubmit={handleNameSubmission}>
           <h2>Name</h2>
           <input autoFocus value={name} onChange={handleNameUpdate} />

@@ -25,7 +25,11 @@ const GameEndModal = () => {
   };
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={handleCloseModal}>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={handleCloseModal}
+      ariaHideApp={false}
+    >
       <div>
         <p>{`${mode} wins!`}</p>
         <button type="button" onClick={handleClickNewGame}>
