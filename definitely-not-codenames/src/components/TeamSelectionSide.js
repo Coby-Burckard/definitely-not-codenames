@@ -1,5 +1,6 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
+import classNames from 'classnames';
 import {startAssignTeam, startAssignRole} from '../actions/roomActions';
 
 const TeamSelectionSide = (props) => {
@@ -22,28 +23,32 @@ const TeamSelectionSide = (props) => {
 
   return (
     <div className={`team-selection__side ${props.color}`}>
-      <button
-        className="team-selection__guesser-container"
-        onClick={handleJoinTeam}
-        type="button"
-      >
-        <span type="button" className="team-selection__label">
-          {`${isRedTeam ? 'Red' : 'Blue'} Team`}
-        </span>
+      <div className="team-selection__guesser-container">
+        <button
+          type="button"
+          className={classNames('team-selection__label', {
+            'team-selection__label--RED': isRedTeam,
+          })}
+          onClick={handleJoinTeam}
+        >
+          {`Join ${isRedTeam ? 'Red' : 'Blue'} Team`}
+        </button>
         <ul className="team-selection__user-list">
           {props.guessers.map((user) => (
             <li key={user.id}>{user.name}</li>
           ))}
         </ul>
-      </button>
+      </div>
       <div className="team-selection__master-container">
         <button
           onClick={handleAssignMaster}
           type="button"
           disabled={props.master.length > 0}
-          className="team-selection__master-button"
+          className={classNames('team-selection__label', {
+            'team-selection__label--RED': isRedTeam,
+          })}
         >
-          {master ? 'Spymaster:' : 'Become Spymaster'}
+          Become Spymaster
         </button>
         {master && (
           <span className="team-selection__master-name">{master.name}</span>

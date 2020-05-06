@@ -8,15 +8,21 @@
 }
 
 .team-selection__label {
-  border: none;
+  background: white;
+  border-radius: 20rem;
+  color: $blue;
+  padding: 0.4rem 1rem;
   margin: $xs-size 0;
-  padding: 0;
-  border-bottom: 2px solid white;
+  outline: none;
+  cursor: pointer;
 
-  &:disabled {
-    color: $light-gray;
-    border-bottom: 2px solid $light-gray;
+  &:focus {
+    outline: none;
   }
+}
+
+.team-selection__label--RED {
+  color: $red;
 }
 
 .team-selection__user-list {
@@ -35,7 +41,6 @@
   flex-direction: column;
   font-size: $s-size;
   margin: $s-size $xl-size;
-
 }
 
 .team-selection__guesser-container {
@@ -55,28 +60,8 @@
 .team-selection__master-container {
   display: flex;
   flex-direction: column;
-  height: 4rem;
+  height: 6rem;
   text-align: center;
-}
-
-.team-selection__master-button {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  transition: font-size 0.2s ease;
-
-  &:hover {
-    border-bottom: 2px solid white;
-  }
-
-  &:disabled {
-    border-bottom: none;
-    cursor: default;
-    font-size: 0.8rem;
-  }
 }
 
 .team-selection__master-name {
