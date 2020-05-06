@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux';
 
 const HintDisplay = () => {
   const {clueWord, clueNumber} = useSelector((state) => state.game.gameState);
-  const clueReceived = clueWord && clueNumber;
+  const clueReceived = clueWord && clueNumber >= -1 && clueNumber <= 30;
 
   return (
     <div>
