@@ -25,7 +25,7 @@ const GamePage = () => {
   return (
     <div>
       <NameModal />
-      {gameStarted && <HintContainer />}
+      <HintContainer />
       {gameStarted && <GameGrid />}
       {gameStarted && <TurnDashboard />}
       <TeamSelection />

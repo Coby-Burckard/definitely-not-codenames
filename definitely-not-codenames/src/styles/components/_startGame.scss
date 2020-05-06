@@ -1,0 +1,16 @@
+.start-game__button {
+  background-color: inherit;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: $xl-size;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.start-game__button--TAN {
+  color: black;
+}

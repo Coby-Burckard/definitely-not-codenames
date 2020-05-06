@@ -7,14 +7,25 @@
   display: flex;
 }
 
+.team-selection__unassigned-container {
+  width: 8rem;
+  padding-top: $l-size;
+  text-align: center;
+}
+
+.team-selection__unassigned {
+  font-size: $s-size;
+}
+
 .team-selection__label {
   background: white;
+  border: none;
   border-radius: 20rem;
   color: $blue;
-  padding: 0.4rem 1rem;
+  cursor: pointer;
   margin: $xs-size 0;
   outline: none;
-  cursor: pointer;
+  padding: 0.4rem 1rem;
 
   &:focus {
     outline: none;
