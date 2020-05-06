@@ -1,0 +1,114 @@
+.ReactModal__Overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  align-items: center;
+  background-color: none;
+
+  border-radius: 7px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  justify-content: center;
+  outline: none;
+  padding: 0;
+  width: 30rem;
+}
+
+.modal--name {
+  border-right: 7px solid $red;
+  border-bottom: 7px solid $red;
+  border-top: 7px solid $blue;
+  border-left: 7px solid $blue;
+}
+
+.modal--BLUE {
+  background-color: $blue;
+}
+
+.modal--RED {
+  background-color: $red;
+}
+
+.modal__title {
+  font-size: $l-size;
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+}
+
+.modal__title--winner {
+  @extend .modal__title;
+  font-size: $xl-size;
+  margin: 0 0 $m-size 0;
+}
+
+.modal__sub-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal__button {
+  border: none;
+  background-color: red;
+  cursor: pointer;
+  color: white;
+  font-size: $m-size;
+  width: 8rem;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.modal__close-button {
+  background-color: unset;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: $m-size;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(13rem, -9.8rem);
+}
+
+.modal__input {
+  background-color: unset;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: $l-size;
+  margin: $s-size 0 $m-size 0;
+  outline: 0;
+  padding: $xs-size;
+  text-align: center;
+  width: 18rem;
+}
+
+.modal__top-left-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 20rem solid $blue;
+  border-right: 30rem solid transparent;
+  z-index: -1;
+}
+
+.modal__bottom-right-triangle {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  border-bottom: 20rem solid $red;
+  border-left: 30rem solid transparent;
+  width: 0;
+  height: 0;
+  z-index: -1;
+}

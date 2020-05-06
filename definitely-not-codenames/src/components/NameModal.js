@@ -38,14 +38,24 @@ const NameModal = () => {
   return (
     <div>
       <Modal
+        className="modal modal--triangle"
         isOpen={isOpen}
         onRequestClose={handleCloseModal}
         ariaHideApp={false}
       >
-        <form onSubmit={handleNameSubmission}>
-          <h2>Name</h2>
-          <input autoFocus value={name} onChange={handleNameUpdate} />
-          <button type="submit">Save</button>
+        <div className="modal__top-left-triangle" />
+        <div className="modal__bottom-right-triangle" />
+        <form className="modal__sub-container" onSubmit={handleNameSubmission}>
+          <h2 className="modal__title">Name</h2>
+          <input
+            className="modal__input"
+            autoFocus
+            value={name}
+            onChange={handleNameUpdate}
+          />
+          <button className="modal__button" type="submit">
+            Save
+          </button>
         </form>
       </Modal>
     </div>

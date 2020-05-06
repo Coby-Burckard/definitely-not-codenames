@@ -19,22 +19,23 @@ const GameEndModal = () => {
     setIsOpen(false);
   };
 
-  const handleClickNewGame = () => {
-    dispatch(startNewGame());
-    setIsOpen(false);
-  };
-
   return (
     <Modal
+      className={`modal modal--${mode}`}
       isOpen={isOpen}
       onRequestClose={handleCloseModal}
       ariaHideApp={false}
     >
       <div>
-        <p>{`${mode} wins!`}</p>
-        <button type="button" onClick={handleClickNewGame}>
-          New Game
+        <button
+          className="modal__close-button"
+          type="button"
+          onClick={handleCloseModal}
+        >
+          X
         </button>
+        <h2 className="modal__title--winner">Winner!</h2>
+        <h2 className="modal__title--winner">{`${mode}`}</h2>
       </div>
     </Modal>
   );
