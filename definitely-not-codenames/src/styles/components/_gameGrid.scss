@@ -9,32 +9,57 @@
   grid-gap: 0.8rem;
   width: $grid-width;
   height: 30rem;
+  perspective: 800px;
+  perspective-origin: top;
 }
 
 .game-grid__card {
-  align-items: center;
-  background-color: $light-gray;
+  width: 100%;
+  height: 100%;
+  background: none;
   border: none;
-  border-radius: $xs-size;
-  color: black;
-  display: flex;
   font-size: $s-size;
   font-weight: 600;
   justify-content: center;
   letter-spacing: 0.05rem;
   outline: none;
+  padding: 0;
+  position: relative;
+  transition: all 600ms ease;
+  transform-style: preserve-3d;
   text-align: center;
-  transition: background-color $transition-time ease;
-  transition: transform $transition-time ease;
 }
 
+.game-grid__card--show-back {
+  transform: rotateX(180deg);
+}
 
-.game-grid__card--unclicked {
+.game-grid__card-face {
+  transition: all 200ms ease;
+  background-color: $light-gray;
+  backface-visibility: hidden;
+  border-radius: $xs-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.game-grid__card-back {
+  transform: rotateX(180deg);
+  transition: opacity 600ms ease;
+}
+
+.game-grid__card--clickable {
   cursor: pointer;
 
   &:hover {
     background-color: lighten($color: $light-gray, $amount: 10%);
-    transform: scale(1.05);
+    transform: rotateX(5deg);
+    box-shadow: 0 5px 5px rgba(50,50,50,.2);
   }
 }
 
