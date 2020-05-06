@@ -5,9 +5,9 @@
   border-width: $xs-size;
   display: flex;
   justify-content: center;
-  height: 8rem;
+  height: 6rem;
   margin: $m-size auto;
-  width: 30rem;
+  width: 24rem;
 }
 
 .hint__message {
@@ -23,7 +23,7 @@
 .hint__input-container {
   display: flex;
   justify-content: center; 
-  margin-bottom: $s-size;
+  margin-bottom: $xs-size;
 }
 
 .hint__input {

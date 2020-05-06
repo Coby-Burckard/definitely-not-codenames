@@ -1,13 +1,15 @@
 .turn-dashboard {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 0 auto $xl-size auto;
   width: $grid-width;
-
 }
 
 .turn-dashboard__side-display {
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   text-align: center;
   margin: 0;
 }
@@ -21,8 +23,9 @@
 }
 
 .turn-dashboard__guesses-text {
-  font-size: $xl-size;
-  margin: 0;
+  text-align: center;
+  font-size: $m-size;
+  margin-left: $xs-size;
 }
 
 .turn-dashboard__side-text-container {
@@ -32,38 +35,51 @@
 
 .turn-dashboard__side-title {
   text-align: center;
-  font-size: $l-size;
+  font-size: $m-size;
   font-weight: normal;
-  margin: 0 0 $s-size 0;
 }
 
 .turn-dashboard__remaining-text {
-  font-size: $xl-size;
+  font-size: $m-size;
+  margin-left: $xs-size;
 }
 
 .turn-dashboard__button {
-  background-color: white;
+  color: white;
   border-radius: $xs-size;
   cursor: pointer;
-  font-size: $l-size;
-  height: 6rem;
+  font-size: $m-size;
+  height: 2.5rem;
   margin: auto 0;
   outline: none;
-  width: 17rem;
+  transition: $transition-time ease;
+  width: 9rem;
 
   &:focus {
     outline: none
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
 
 .turn-dashboard__button--BLUE {
   @extend .turn-dashboard__button;
-  border: $xs-size solid $blue;
-  color: $blue;
+  border: 0.2rem solid $blue;
+  background-color: $blue;
+
+  &:hover {
+    background-color: $light-blue;
+  }
 }
 
 .turn-dashboard__button--RED {
   @extend .turn-dashboard__button;
-  border: $xs-size solid $red;
-  color: $red;
+  border: 0.2rem solid $red;
+  background-color: $red;
+
+  &:hover {
+    background-color: $light-red;
+  }
 }

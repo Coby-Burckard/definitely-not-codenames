@@ -32,8 +32,8 @@ const TurnDashboard = () => {
   return (
     <div className="turn-dashboard">
       <div className="turn-dashboard__side-display">
-        <h2 className="turn-dashboard__side-title">Guesses</h2>
-        <p
+        <span className="turn-dashboard__side-title">Guesses</span>
+        <span
           className={`turn-dashboard__${turnColor} turn-dashboard__guesses-text`}
         >
           {hasInfiniteGuesses && <span>∞</span>}
@@ -44,18 +44,20 @@ const TurnDashboard = () => {
               {clueNumber}
             </span>
           )}
-        </p>
+        </span>
       </div>
-      <button
-        className={`turn-dashboard__button--${turnColor}`}
-        type="button"
-        onClick={handlePass}
-      >
-        End Turn
-      </button>
       <div className="turn-dashboard__side-display">
-        <h2 className="turn-dashboard__side-title">Remaining</h2>
+        <button
+          className={`turn-dashboard__button--${turnColor}`}
+          type="button"
+          onClick={handlePass}
+        >
+          End Turn
+        </button>
+      </div>
+      <div className="turn-dashboard__side-display">
         <div className="turn-dashboard__side-text-container">
+          <span className="turn-dashboard__side-title">Remaining</span>
           <span className="turn-dashboard__RED turn-dashboard__remaining-text">
             {9 - redClickedCount}
           </span>
