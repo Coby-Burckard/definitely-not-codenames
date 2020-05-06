@@ -5,12 +5,15 @@ import {selfIsHintGiver, gameStartedSelector} from '../selectors/gameSelectors';
 import HintInput from './HintInput';
 import HintDisplay from './HintDisplay';
 import StartGame from './StartGame';
+import StartNewGame from './StartNewGame';
 
 const HintContainer = () => {
-  const turnColor = useSelector((state) => state.game.gameState.turnColor);
+  const {turnColor, mode} = useSelector((state) => state.game.gameState);
+  const userColor = useSelector((state) => state.user.team);
+
   const amHintGiver = useSelector(selfIsHintGiver);
   const started = useSelector(gameStartedSelector);
-  const userColor = useSelector((state) => state.user.team);
+  const ended = mode === 'RED' || mode === 'BLUE';
 
   return (
     <div
@@ -20,9 +23,11 @@ const HintContainer = () => {
         TAN: !userColor,
       })}
     >
+      {ended && <StartNewGame />}
       {!started && <StartGame />}
-      {started && amHintGiver && <HintInput />}
-      {started && !amHintGiver && <HintDisplay />}
+      {started && amHintGiver && !ended && <HintInput />}
+      {started && !amHintGiver && !ended && <HintDisplay />}
+      {}
     </div>
   );
 };

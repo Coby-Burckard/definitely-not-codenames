@@ -50,6 +50,15 @@ const startStartGame = () => (dispatch) => {
   );
 };
 
+const startNewGame = () => (dispatch) => {
+  dispatch(
+    wsSend({
+      type: 'START_NEW_GAME',
+      payload: {},
+    })
+  );
+};
+
 export {
   setRoom,
   startJoinRoom,
@@ -58,4 +67,5 @@ export {
   startAssignTeam,
   startAssignRole,
   startStartGame,
+  startNewGame,
 };
