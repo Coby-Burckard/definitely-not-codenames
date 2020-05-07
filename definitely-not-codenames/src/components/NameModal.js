@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
+import classnames from 'classnames';
 import Modal from 'react-modal';
 import {startSetName} from '../actions/userActions';
+import {NORMAL_TIME} from '../constants/animation';
 
 const NameModal = () => {
   const dispatch = useDispatch();
@@ -9,6 +11,7 @@ const NameModal = () => {
   // initializing local state
   const [isOpen, setIsOpen] = useState(true);
   const [name, setName] = useState('');
+  const [isOpaque, setIsOpaque] = useState(true);
 
   // user form and submission handlers
   const handleNameUpdate = (e) => {
@@ -19,28 +22,41 @@ const NameModal = () => {
     }
   };
 
+  const animateClose = () => {
+    setIsOpaque(true);
+    setIsOpen(false);
+  };
+
   const handleNameSubmission = (e) => {
     e.preventDefault();
 
     if (name) {
       dispatch(startSetName(name));
-      setIsOpen(false);
+      animateClose();
     }
   };
 
   const handleCloseModal = () => {
     if (name) {
       dispatch(startSetName(name));
-      setIsOpen(false);
+      animateClose();
     }
+  };
+
+  const removeOpacity = () => {
+    setIsOpaque(false);
   };
 
   return (
     <div>
       <Modal
-        className="modal modal--triangle"
+        className={classnames('modal', 'modal--triangle', 'modal--name', {
+          'modal--opaque': isOpaque,
+        })}
+        closeTimeoutMS={NORMAL_TIME}
         isOpen={isOpen}
         onRequestClose={handleCloseModal}
+        onAfterOpen={removeOpacity}
         ariaHideApp={false}
       >
         <div className="modal__top-left-triangle" />

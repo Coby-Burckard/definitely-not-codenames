@@ -4,6 +4,19 @@
   justify-content: center;
 }
 
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity $normal-time ease;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
 .modal {
   align-items: center;
   background-color: none;
@@ -14,9 +27,15 @@
   flex-direction: column;
   height: 20rem;
   justify-content: center;
+  opacity: 1;
   outline: none;
   padding: 0;
+  transition: 1s ease;
   width: 30rem;
+}
+
+.modal--opaque {
+  opacity: 0;
 }
 
 .modal--name {

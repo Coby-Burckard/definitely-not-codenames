@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import Modal from 'react-modal';
-import {startNewGame} from '../actions/gameActions';
+import {NORMAL_TIME} from '../constants/animation';
 
 const GameEndModal = () => {
   const dispatch = useDispatch();
@@ -23,6 +23,7 @@ const GameEndModal = () => {
     <Modal
       className={`modal modal--${mode}`}
       isOpen={isOpen}
+      closeTimeoutMS={NORMAL_TIME}
       onRequestClose={handleCloseModal}
       ariaHideApp={false}
     >
