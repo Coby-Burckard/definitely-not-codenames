@@ -46,7 +46,7 @@ const NameModal = () => {
         <div className="modal__top-left-triangle" />
         <div className="modal__bottom-right-triangle" />
         <form className="modal__sub-container" onSubmit={handleNameSubmission}>
-          <h2 className="modal__title">Name</h2>
+          <h2 className="modal__title">Your Name</h2>
           <input
             className="modal__input"
             autoFocus

@@ -19,11 +19,13 @@ const RequestRoom = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleClick} type="button">
-        Create a New Room
-      </button>
-    </div>
+    <button
+      className="game-grid__card--home-page-button--BLUE"
+      onClick={handleClick}
+      type="button"
+    >
+      Create Room
+    </button>
   );
 };
 
