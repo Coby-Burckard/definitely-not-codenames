@@ -9,6 +9,8 @@ import TurnDashboard from './TurnDashboard';
 import HintContainer from './HintContainer';
 import GameEndModal from './GameEndModal';
 import {gameStartedSelector} from '../selectors/gameSelectors';
+import SendRoomModal from './SendRoomModal';
+import SendRoomModalButton from './SendRoomModalButton';
 
 const GamePage = () => {
   const {roomID} = useParams();
@@ -25,7 +27,10 @@ const GamePage = () => {
   return (
     <div>
       <NameModal />
-      <HintContainer />
+      <SendRoomModal />
+      <div className="hint__container">
+        <HintContainer />
+      </div>
       {gameStarted && <GameGrid />}
       {gameStarted && <TurnDashboard />}
       <TeamSelection />

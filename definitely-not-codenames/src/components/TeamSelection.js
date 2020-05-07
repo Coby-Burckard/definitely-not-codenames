@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import TeamSelectionSide from './TeamSelectionSide';
+import SendRoomModalButton from './SendRoomModalButton';
 
 const TeamSelection = () => {
   const gameUsers = useSelector((state) => state.room.users);
@@ -29,6 +30,7 @@ const TeamSelection = () => {
           master={redMaster}
         />
         <div className="team-selection__unassigned-container">
+          <SendRoomModalButton />
           {unassinged.map((user) => (
             <p className="team-selection__unassigned" key={user.id}>
               {user.name}

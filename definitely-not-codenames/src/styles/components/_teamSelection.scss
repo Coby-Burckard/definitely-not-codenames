@@ -5,11 +5,13 @@
 
 .team-selection__container {
   display: flex;
+  justify-content: space-between;
+  width: $grid-width;
 }
 
 .team-selection__unassigned-container {
-  width: 8rem;
-  padding-top: $l-size;
+  width: 15rem;
+  padding-top: $ml-size;
   text-align: center;
 }
 
@@ -51,7 +53,7 @@
   border-width: $xs-size;
   flex-direction: column;
   font-size: $s-size;
-  margin: $s-size $xl-size;
+  margin: $s-size 0;
 }
 
 .team-selection__guesser-container {

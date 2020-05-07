@@ -47,11 +47,19 @@
 }
 
 .modal--BLUE {
-  background-color: $blue;
+  background-color: $light-blue;
+  border: $xs-size solid $blue
 }
 
 .modal--RED {
-  background-color: $red;
+  background-color: $light-red;
+  border: $xs-size solid $red
+}
+
+.modal--TAN {
+  background-color: $light-tan;
+  border: $xs-size solid $tan;
+  color: black;
 }
 
 .modal__title {
@@ -65,6 +73,30 @@
   @extend .modal__title;
   font-size: $xl-size;
   margin: 0 0 $m-size 0;
+}
+
+.modal__code-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__title--code {
+  @extend .modal__title;
+  background-color: white;
+  border-radius: 2rem;
+  color: black;
+  font-size: $m-size;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: $xs-size 0.2rem;
+  width: 12rem;
+}
+
+.modal__sub-title {
+  font-size: $m-size;
+  font-weight: normal;
+  margin: $m-size $xs-size;
+  text-align: center;
 }
 
 .modal__sub-container {
@@ -90,7 +122,7 @@
 .modal__close-button {
   background-color: unset;
   border: none;
-  color: white;
+  color: $light-gray;
   cursor: pointer;
   font-size: $m-size;
   position: absolute;

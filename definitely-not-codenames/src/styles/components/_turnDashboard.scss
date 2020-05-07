@@ -67,7 +67,7 @@
 .turn-dashboard__button--BLUE {
   @extend .turn-dashboard__button;
   border: 0.2rem solid $blue;
-  background-color: $blue;
+  background-color: $light-blue;
 
   &:hover {
     background-color: $light-blue;
@@ -77,9 +77,20 @@
 .turn-dashboard__button--RED {
   @extend .turn-dashboard__button;
   border: 0.2rem solid $red;
-  background-color: $red;
+  background-color: $light-red;
 
   &:hover {
     background-color: $light-red;
+  }
+}
+
+.turn-dashboard__button--TAN {
+  @extend .turn-dashboard__button;
+  border: 0.2rem solid $tan;
+  background-color: $light-tan;
+  color: black;
+
+  &:hover {
+    background-color: $light-tan;
   }
 }

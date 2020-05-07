@@ -5,6 +5,7 @@ import websocketMiddleware from '../middlware/websocket';
 import roomReducer from '../reducers/roomReducer';
 import userReducer from '../reducers/userReducer';
 import gameReducer from '../reducers/gameReducer';
+import modalReducer from '../reducers/modalReducer';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     room: roomReducer,
     user: userReducer,
     game: gameReducer,
+    modals: modalReducer,
   },
   middleware: [...getDefaultMiddleware(), websocketMiddleware],
 });
