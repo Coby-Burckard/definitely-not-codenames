@@ -61,6 +61,22 @@
   color: white;
 }
 
-.game-grid__card--opaque {
+.game-grid__card--opaque-RED {
   opacity: 25%;
+  color: $light-red;
+}
+
+.game-grid__card--opaque-BLUE {
+  opacity: 25%;
+  color: $light-blue;
+}
+
+.game-grid__card--opaque-WHITE {
+  opacity: 25%;
+  color: lighten($tan, 15%);
+}
+
+.game-grid__card--opaque-BLACK {
+  opacity: 25%;
+  color: white;
 }

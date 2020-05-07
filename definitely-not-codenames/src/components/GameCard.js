@@ -16,7 +16,8 @@ const GameCard = ({card, index}) => {
     <button
       className={classNames('game-grid__card', {
         'game-grid__card--unclicked': !card.touched && role !== 'MASTER',
-        'game-grid__card--opaque': role === 'MASTER' && card.touched,
+        [`game-grid__card--opaque-${card.color}`]:
+          role === 'MASTER' && card.touched,
         [`game-grid__card--${card.color}`]: card.touched || role === 'MASTER',
       })}
       type="button"

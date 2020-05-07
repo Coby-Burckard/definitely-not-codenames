@@ -9,6 +9,8 @@ const App = () => {
 
   if (backendHost === 'heroku') {
     backendHost = 'serene-headland-98871.herokuapp.com/';
+  } else if (backendHost === 'localIP') {
+    backendHost = '';
   } else {
     backendHost = 'localhost';
   }
