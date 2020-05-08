@@ -1,7 +1,7 @@
 import {createReducer} from '@reduxjs/toolkit';
 
 const initialState = {
-  isValidRoom: false,
+  isValidRoom: null,
 };
 
 const errorReducer = createReducer(initialState, {

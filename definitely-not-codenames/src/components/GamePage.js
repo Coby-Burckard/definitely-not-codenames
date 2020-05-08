@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
+import {useIsRoomValid} from '../hooks/gamePageHooks';
 import {startJoinRoom} from '../actions/roomActions';
 import TeamSelection from './TeamSelection';
 import NameModal from './NameModal';
@@ -16,6 +17,7 @@ const GamePage = () => {
   const dispatch = useDispatch();
   const userID = useSelector((state) => state.user.id);
   const gameStarted = useSelector(gameStartedSelector);
+  useIsRoomValid();
 
   useEffect(() => {
     if (userID) {
