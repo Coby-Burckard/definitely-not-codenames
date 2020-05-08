@@ -11,6 +11,7 @@ import HintContainer from './HintContainer';
 import GameEndModal from './GameEndModal';
 import {gameStartedSelector} from '../selectors/gameSelectors';
 import SendRoomModal from './SendRoomModal';
+import { usePingPong } from '../hooks/pingPong';
 
 const GamePage = () => {
   const {roomID} = useParams();
@@ -18,6 +19,7 @@ const GamePage = () => {
   const userID = useSelector((state) => state.user.id);
   const gameStarted = useSelector(gameStartedSelector);
   useIsRoomValid();
+  usePingPong();
 
   useEffect(() => {
     if (userID) {
