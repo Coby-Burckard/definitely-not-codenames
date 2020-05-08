@@ -14,7 +14,8 @@ const JoinRoomModal = () => {
   const [gameID, setGameID] = useState('');
 
   const handleGameIDChange = (e) => {
-    setGameID(e.target.value);
+    const id = e.target.value;
+    setGameID(id.trim());
   };
 
   const handleGameIDSubmit = (e) => {
