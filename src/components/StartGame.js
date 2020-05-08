@@ -6,7 +6,7 @@ import {rolesFilledSelector} from '../selectors/gameSelectors';
 
 const StartGame = () => {
   const dispatch = useDispatch();
-  const {allRolesFilled} = useSelector(rolesFilledSelector);
+  // const {allRolesFilled} = useSelector(rolesFilledSelector);
   const userColor = useSelector((state) => state.user.team);
 
   const handleStartGame = () => {
@@ -19,7 +19,6 @@ const StartGame = () => {
       })}
       type="button"
       onClick={handleStartGame}
-      disabled={!allRolesFilled}
     >
       Start Game
     </button>
