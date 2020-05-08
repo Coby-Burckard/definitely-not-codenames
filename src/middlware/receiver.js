@@ -1,7 +1,7 @@
 import {addMessage} from '../actions/chatActions';
 import {setRoom, setRoomUsers} from '../actions/roomActions';
 import {setUser, updateUser} from '../actions/userActions';
-import {setGameState} from '../actions/gameActions';
+import {setGameState, setPong} from '../actions/gameActions';
 import {setIsValidRoom} from '../actions/errorActions';
 
 const receiver = (dispatch, rawJSON) => {
@@ -36,6 +36,9 @@ const receiver = (dispatch, rawJSON) => {
     case 'ROOM_CHECKED':
       dispatch(setIsValidRoom(data.payload));
       break;
+    case 'PONG':
+      dispatch(setPong(data.payload))
+      break
     default:
   }
 };

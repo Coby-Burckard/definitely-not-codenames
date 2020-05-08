@@ -41,10 +41,26 @@ const startNewGame = () => (dispatch) => {
   );
 };
 
+const startPing = (ping) => (dispatch) => {
+  dispatch(
+    wsSend({
+      type: 'PING',
+      payload: {data: 'https://www.youtube.com/watch?v=oHg5SJYRHA0'}
+    })
+  )
+}
+
+const setPong = ({pong}) => ({
+  type: 'SET_PONG',
+  pong
+})
+
 export {
   setGameState,
   startClickCard,
   startSetClue,
   startClickPass,
   startNewGame,
+  startPing,
+  setPong
 };
