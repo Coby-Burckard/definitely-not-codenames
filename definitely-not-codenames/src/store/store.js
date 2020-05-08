@@ -6,6 +6,7 @@ import roomReducer from '../reducers/roomReducer';
 import userReducer from '../reducers/userReducer';
 import gameReducer from '../reducers/gameReducer';
 import modalReducer from '../reducers/modalReducer';
+import errorReducer from '../reducers/errorReducer';
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     user: userReducer,
     game: gameReducer,
     modals: modalReducer,
+    error: errorReducer,
   },
   middleware: [...getDefaultMiddleware(), websocketMiddleware],
 });

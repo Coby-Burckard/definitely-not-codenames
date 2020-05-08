@@ -2,6 +2,7 @@ import {addMessage} from '../actions/chatActions';
 import {setRoom, setRoomUsers} from '../actions/roomActions';
 import {setUser, updateUser} from '../actions/userActions';
 import {setGameState} from '../actions/gameActions';
+import {setIsValidRoom} from '../actions/errorActions';
 
 const receiver = (dispatch, rawJSON) => {
   let data;
@@ -31,6 +32,9 @@ const receiver = (dispatch, rawJSON) => {
       break;
     case 'GAME_STATE_UPDATED':
       dispatch(setGameState(data.payload.game));
+      break;
+    case 'ROOM_CHECKED':
+      dispatch(setIsValidRoom(data.payload));
       break;
     default:
   }
