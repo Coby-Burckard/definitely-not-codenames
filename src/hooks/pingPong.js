@@ -11,7 +11,7 @@ const usePingPong = () => {
   console.log('ping')
   useEffect(() => {
     setTimeout(() => {
-      dispatch(startPing)
+      dispatch(startPing(pong))
     },30000)
   }, [pong, dispatch])
 }
