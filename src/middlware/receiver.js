@@ -36,7 +36,7 @@ const receiver = (dispatch, rawJSON) => {
     case 'ROOM_CHECKED':
       dispatch(setIsValidRoom(data.payload));
       break;
-    case 'PONG':
+    case 'SET_PONG':
       dispatch(setPong(data.payload))
       break
     default:

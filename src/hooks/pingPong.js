@@ -7,12 +7,12 @@ const usePingPong = () => {
 
   const dispatch = useDispatch();
 
-  const {pong} = useSelector(state => state.game)
-  console.log('ping')
+  const {pong} = useSelector(state => state.room)
+
   useEffect(() => {
     setTimeout(() => {
       dispatch(startPing(pong))
-    },30000)
+    },3000)
   }, [pong, dispatch])
 }
 
