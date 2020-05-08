@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 import Modal from 'react-modal';
 import {NORMAL_TIME} from '../constants/animation';
 
 const GameEndModal = () => {
-  const dispatch = useDispatch();
-
   const [isOpen, setIsOpen] = useState(false);
   const {mode} = useSelector((state) => state.game.gameState);
 

@@ -1,10 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 
-const GameCard = ({card, index}) => {
-  const dispatch = useDispatch();
-
+const GameCard = ({card}) => {
   const role = useSelector((state) => state.user.role);
 
   return (
