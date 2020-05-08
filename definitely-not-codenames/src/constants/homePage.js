@@ -126,7 +126,7 @@ const cards = [
   },
 ];
 
-const modifiedCards = cards.map((card, i) => {
+const modifiedCards = cards.map((card) => {
   const newCard = {...card};
   newCard.word = '';
   if (Math.random() < 0.33) {

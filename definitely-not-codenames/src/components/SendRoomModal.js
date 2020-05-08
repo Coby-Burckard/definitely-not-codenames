@@ -33,7 +33,7 @@ const SendRoomModal = () => {
           type="button"
           onClick={handleCloseModal}
         >
-          X
+          ✕
         </button>
         <h2 className="modal__title">Send Invite</h2>
         <h2 className="modal__sub-title">

@@ -33,7 +33,7 @@ const GameEndModal = () => {
           type="button"
           onClick={handleCloseModal}
         >
-          X
+          ✕
         </button>
         <h2 className="modal__title--winner">Winner!</h2>
         <h2 className="modal__title--winner">{`${mode}`}</h2>
