@@ -10,7 +10,6 @@ import HintContainer from './HintContainer';
 import GameEndModal from './GameEndModal';
 import {gameStartedSelector} from '../selectors/gameSelectors';
 import SendRoomModal from './SendRoomModal';
-import SendRoomModalButton from './SendRoomModalButton';
 
 const GamePage = () => {
   const {roomID} = useParams();

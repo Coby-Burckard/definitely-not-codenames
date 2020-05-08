@@ -3,4 +3,9 @@ const setSendRoomModal = (isOpen) => ({
   isOpen,
 });
 
-export {setSendRoomModal};
+const setJoinRoomModal = (isOpen) => ({
+  type: 'SET_JOIN_ROOM_MODAL',
+  isOpen,
+});
+
+export {setSendRoomModal, setJoinRoomModal};

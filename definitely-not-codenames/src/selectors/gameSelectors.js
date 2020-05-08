@@ -32,7 +32,7 @@ const rolesFilledSelector = (state) => {
   return {
     redMasterIsFilled: redMaster,
     blueMasterIsFilled: blueMaster,
-    allRolesFilled: true, // redMaster && redGuesser && blueMaster && blueGuesser,
+    allRolesFilled: redMaster && redGuesser && blueMaster && blueGuesser,
   };
 };
 

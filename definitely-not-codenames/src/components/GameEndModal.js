@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 import Modal from 'react-modal';
 import {NORMAL_TIME} from '../constants/animation';
 
 const GameEndModal = () => {
-  const dispatch = useDispatch();
-
   const [isOpen, setIsOpen] = useState(false);
   const {mode} = useSelector((state) => state.game.gameState);
 
@@ -33,7 +31,7 @@ const GameEndModal = () => {
           type="button"
           onClick={handleCloseModal}
         >
-          X
+          ✕
         </button>
         <h2 className="modal__title--winner">Winner!</h2>
         <h2 className="modal__title--winner">{`${mode}`}</h2>

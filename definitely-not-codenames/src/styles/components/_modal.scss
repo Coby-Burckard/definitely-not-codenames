@@ -78,6 +78,7 @@
 .modal__code-container {
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .modal__title--code {
@@ -85,11 +86,11 @@
   background-color: white;
   border-radius: 2rem;
   color: black;
+  display: inline;
   font-size: $m-size;
   font-weight: bold;
   margin: 0 auto;
-  padding: $xs-size 0.2rem;
-  width: 15rem;
+  padding: $xs-size $s-size;
 }
 
 .modal__sub-title {
@@ -119,6 +120,13 @@
   }
 }
 
+.modal__button--join {
+  @extend .modal__button;
+  background-color: $light-tan;
+  color: black;
+  width: 10rem;
+}
+
 .modal__close-button {
   background-color: unset;
   border: none;
@@ -128,7 +136,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(13rem, -9.8rem);
+  transform: translate(12.8rem, -9.8rem);
 }
 
 .modal__input {
@@ -142,6 +150,12 @@
   padding: $xs-size;
   text-align: center;
   width: 18rem;
+}
+
+.modal__input--join {
+  @extend .modal__input;
+  color: black;
+  border-color: black;
 }
 
 .modal__top-left-triangle {

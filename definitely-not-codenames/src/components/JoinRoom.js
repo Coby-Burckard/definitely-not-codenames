@@ -1,11 +1,20 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {setJoinRoomModal} from '../actions/modalActions';
 
 const JoinRoom = () => {
-  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const handleJoinRoomClick = () => {
+    dispatch(setJoinRoomModal(true));
+  };
 
   return (
-    <button className="game-grid__card--home-page-button--RED" type="button">
+    <button
+      className="game-grid__card--home-page-button--RED"
+      type="button"
+      onClick={handleJoinRoomClick}
+    >
       Join Room
     </button>
   );
