@@ -14,7 +14,7 @@ const receiver = (dispatch, rawJSON) => {
   }
 
   // eslint-disable-next-line no-console
-  console.log(data.type);
+  // console.log(data.type);
 
   switch (data.type) {
     case 'MESSAGE_RECEIVED':

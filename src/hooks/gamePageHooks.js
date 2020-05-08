@@ -16,7 +16,7 @@ const useIsRoomValid = () => {
       history.push('/');
     }
     dispatch(setRoom(null));
-  }, [isValidRoom]);
+  }, [isValidRoom, dispatch, history]);
 };
 
 export {useIsRoomValid};
