@@ -15,6 +15,10 @@
   font-size: $ml-size;
 }
 
+.hint__message--black {
+  color: black;
+}
+
 .hint__form {
   display: flex;
   flex-direction: column;
