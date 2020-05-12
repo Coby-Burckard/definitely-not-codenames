@@ -15,7 +15,7 @@ const JoinRoom = () => {
       type="button"
       onClick={handleJoinRoomClick}
     >
-      Join Room
+      Join Game
     </button>
   );
 };

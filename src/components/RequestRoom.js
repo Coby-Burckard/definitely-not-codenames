@@ -24,7 +24,7 @@ const RequestRoom = () => {
       onClick={handleClick}
       type="button"
     >
-      Create Room
+      Create Game
     </button>
   );
 };
