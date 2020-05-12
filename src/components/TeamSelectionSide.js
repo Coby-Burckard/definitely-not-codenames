@@ -46,6 +46,7 @@ const TeamSelectionSide = (props) => {
           disabled={props.master.length > 0}
           className={classNames('team-selection__label', {
             'team-selection__label--RED': isRedTeam,
+            'disabled-button': props.master.length > 0,
           })}
         >
           Become Spymaster
