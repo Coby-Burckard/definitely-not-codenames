@@ -2,6 +2,7 @@ import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
 import {startClickPass} from '../actions/gameActions';
+import TeamSelectionModalButton from './TeamSelectionModalButton'
 
 const TurnDashboard = () => {
   const dispatch = useDispatch();
@@ -53,6 +54,9 @@ const TurnDashboard = () => {
         >
           End Turn
         </button>
+      </div>
+      <div className="turn-dashboard__side-display">
+        <TeamSelectionModalButton />
       </div>
       <div className="turn-dashboard__side-display">
         <div className="turn-dashboard__side-text-container">

@@ -1,9 +1,7 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'
 import gitHubLogo from '../images/GitHub-Mark-120px-plus.png';
 
 const GitHubLink = () => {
-  const history = useHistory()
   const link = 'https://github.com/Coby-Burckard/definitely-not-codenames'
 
   const handleClick = () => {

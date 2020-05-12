@@ -35,6 +35,15 @@
   width: 30rem;
 }
 
+.modal--team-selection {
+  background-color: white;
+  border: 7px solid $dark-gray;
+  color: $light-gray;
+  height: 23rem;
+  width: 63rem;
+
+}
+
 .modal--opaque {
   opacity: 0;
 }
@@ -137,6 +146,11 @@
   top: 50%;
   left: 50%;
   transform: translate(12.8rem, -9.8rem);
+}
+
+.modal__close-button--team-selection {
+  transform: translate(29rem, -11rem);
+  color: $dark-gray;
 }
 
 .modal__input {

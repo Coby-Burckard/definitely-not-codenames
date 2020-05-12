@@ -9,6 +9,7 @@ import GameGrid from './GameGrid';
 import TurnDashboard from './TurnDashboard';
 import HintContainer from './HintContainer';
 import GameEndModal from './GameEndModal';
+import TeamSelectionModal from './TeamSelectionModal'
 import {gameStartedSelector} from '../selectors/gameSelectors';
 import SendRoomModal from './SendRoomModal';
 import { usePingPong } from '../hooks/pingPong';
@@ -31,12 +32,13 @@ const GamePage = () => {
     <div>
       <NameModal />
       <SendRoomModal />
+      <TeamSelectionModal />
       <div className="hint__container">
         <HintContainer />
       </div>
       {gameStarted && <GameGrid />}
       {gameStarted && <TurnDashboard />}
-      <TeamSelection />
+      {!gameStarted && <TeamSelection />}
       <GameEndModal />
     </div>
   );

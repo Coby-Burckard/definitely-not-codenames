@@ -8,4 +8,9 @@ const setJoinRoomModal = (isOpen) => ({
   isOpen,
 });
 
-export {setSendRoomModal, setJoinRoomModal};
+const setTeamModal = (isOpen) => ({
+  type: 'SET_TEAM_MODAL',
+  isOpen,
+})
+
+export {setSendRoomModal, setJoinRoomModal, setTeamModal};

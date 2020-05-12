@@ -9,6 +9,8 @@ $light-blue: lighten($color: $blue, $amount: 15%);
 $light-red: lighten($color: $red, $amount: 10%);
 $light-tan: lighten($color: $tan, $amount: 10%);
 
+$dark-gray: darken($light-gray, 40%);
+
 // font size
 $font-size-l: 1.8rem;
 $font-size-s: 1.4rem;
