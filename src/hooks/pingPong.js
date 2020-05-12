@@ -12,7 +12,7 @@ const usePingPong = () => {
   useEffect(() => {
     setTimeout(() => {
       dispatch(startPing(pong))
-    },3000)
+    },5000)
   }, [pong, dispatch])
 }
 

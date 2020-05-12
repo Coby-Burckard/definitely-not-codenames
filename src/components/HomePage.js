@@ -16,11 +16,11 @@ const HomePage = () => {
         {CARDS.map((card, i) => {
           switch (i) {
             case 11: // The card index
-              return <RequestRoom />;
+              return <RequestRoom key={i} />;
             case 13:
-              return <JoinRoom />;
+              return <JoinRoom key={i} />;
             default:
-              return <GameCardDisabled card={card} index={i} key={card.word} />;
+              return <GameCardDisabled card={card} index={i} key={i} />;
           }
         })}
       </div>

@@ -1,5 +1,3 @@
-import {wsSend} from './webSocketActions';
-
 const setIsValidRoom = (payload) => ({
   type: 'SET_VALID_ROOM',
   payload,
