@@ -1,11 +1,10 @@
 import React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
-import {startClickPass} from '../actions/gameActions';
 import TeamSelectionModalButton from './TeamSelectionModalButton'
+import EndTurnButton from './EndTurnButton';
 
 const TurnDashboard = () => {
-  const dispatch = useDispatch();
 
   const {turnColor} = useSelector((state) => state.game.gameState);
 
@@ -25,10 +24,6 @@ const TurnDashboard = () => {
     guessedCount = '-';
   }
 
-  const handlePass = () => {
-    dispatch(startClickPass());
-  };
-
   return (
     <div className="turn-dashboard">
       <div className="turn-dashboard__side-display">
@@ -47,13 +42,7 @@ const TurnDashboard = () => {
         </span>
       </div>
       <div className="turn-dashboard__side-display">
-        <button
-          className={`turn-dashboard__button--${turnColor}`}
-          type="button"
-          onClick={handlePass}
-        >
-          End Turn
-        </button>
+        <EndTurnButton />
       </div>
       <div className="turn-dashboard__side-display">
         <TeamSelectionModalButton />

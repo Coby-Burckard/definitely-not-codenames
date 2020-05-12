@@ -94,3 +94,15 @@
     background-color: $light-tan;
   }
 }
+
+.disabled-button {
+  background-color: $light-gray;
+  border: $dark-gray;
+  color: white;
+  cursor: unset;
+
+  &:hover {
+    transform: unset;
+    background-color: $light-gray;
+  }
+}

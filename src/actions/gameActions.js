@@ -24,6 +24,7 @@ const startSetClue = (clueWord, clueNumber) => (dispatch) => {
 };
 
 const startClickPass = () => (dispatch) => {
+  console.log('clicking pass')
   dispatch(
     wsSend({
       type: 'CLICK_PASS',

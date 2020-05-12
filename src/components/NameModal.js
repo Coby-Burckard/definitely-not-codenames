@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import classnames from 'classnames';
 import Modal from 'react-modal';
 import {startSetName} from '../actions/userActions';
 import {NORMAL_TIME} from '../constants/animation';
+import { setTeamModal } from '../actions/modalActions';
 
 const NameModal = () => {
   const dispatch = useDispatch();
+
+  const {started} = useSelector(state => state.game.gameState)
 
   // initializing local state
   const [isOpen, setIsOpen] = useState(true);
@@ -33,6 +36,10 @@ const NameModal = () => {
     if (name) {
       dispatch(startSetName(name));
       animateClose();
+
+      if (started) {
+        dispatch(setTeamModal(true))
+      }
     }
   };
 
