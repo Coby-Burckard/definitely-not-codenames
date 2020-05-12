@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {setSendRoomModal} from '../actions/modalActions';
+import {setSendRoomModal, setTeamModal} from '../actions/modalActions';
 
 const SendRoomModalButton = () => {
   const dispatch = useDispatch();
@@ -11,6 +11,7 @@ const SendRoomModalButton = () => {
   }
 
   const openSendRoom = () => {
+    dispatch(setTeamModal(false))
     dispatch(setSendRoomModal(true));
   };
 
